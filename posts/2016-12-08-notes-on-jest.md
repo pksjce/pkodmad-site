@@ -1,5 +1,5 @@
 ---
-path: "/blog/notes-on-jest"
+path: "/tech-stuff/notes-on-jest"
 date: "2016-12-08"
 title: "Notes on Jest"
 ---

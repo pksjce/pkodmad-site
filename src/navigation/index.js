@@ -8,7 +8,7 @@ export class NavigationItem extends React.Component {
   render () {
     const {onClick, item, isBack} = this.props;
     const {id, name} = item;
-    return <div onClick={onClick} key={id}>{isBack ? `back-${name}` : name}</div>;
+    return <div onClick={onClick} key={id}>{isBack ? `${name}` : name}</div>;
   }
 }
 export class Navigation extends React.Component {

@@ -7,11 +7,16 @@
         position: fixed;
         top: 70px;
         width: 200px;
+        text-align: center;
     }
 
     .content {
         width: 80%;
         margin-left: 20%;
+    }
+
+    .full-content {
+        width: 100%;
     }
     
     .wrapper {

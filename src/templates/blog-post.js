@@ -22,16 +22,21 @@ export default function Template({
   ]
 }
 
-export const pageQuery = graphql`
-query BlogPostByPath($path: String!) {
-  markdownRemark(frontmatter: { path: { eq: $path } }) {
-    html
-    frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      path
-      title
+const query  = () => {
+  debugger;
+  return graphql`
+    query BlogPostByPath($slug: String!) {
+      markdownRemark(frontmatter: { path: { eq: $slug } }) {
+        html
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          path
+          title
+        }
+      }
     }
-  }
+    `
 }
-`
+
+export const pageQuery = query();
 ;

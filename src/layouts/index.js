@@ -55,7 +55,7 @@ const Header = ({title}) => (
     </div>
 )
 
-const TemplateWrapper = ({ children, data }) => {
+const TemplateWrapper = ({ children, data, location }) => {
   const title = data.site.siteMetadata.title
   return <div className='wrapper' >
     <Helmet
@@ -65,11 +65,11 @@ const TemplateWrapper = ({ children, data }) => {
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <div className='sidebar'>
+    {location.pathname !== '/' && <div className='sidebar'>
       <Header title={title} />
       <NavigationApp />
-    </div>
-    <div className='content'>
+    </div>}
+    <div className={location.pathname === '/' ? 'full-content' : 'content'}>
       {children()}
     </div>
   </div>
