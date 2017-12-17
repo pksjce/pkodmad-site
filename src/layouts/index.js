@@ -1,12 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import NavigationApp from './navigation'
-import './grid.css'
-
-//import './index.css'
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
+import NavigationApp from "./navigation";
+import "./grid.css";
+import NavHeader from "../components/nav-header";
+import LinkWrapper from "../components/link-wrapper";
+import pageList from "../navigation/page-list";
 
 export const query = graphql`
   query LayoutQuery {
@@ -16,66 +17,35 @@ export const query = graphql`
       }
     }
   }
-`
-
-// const Header = ({title}) => (
-//   <div
-//     style={{
-//       background: 'rebeccapurple',
-//       marginBottom: '1.45rem',
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: '0 auto',
-//         maxWidth: 960,
-//         padding: '1.45rem 1.0875rem',
-//       }}
-//     >
-//       <h1 style={{ margin: 0 }}>
-//         <Link
-//           to="/"
-//           style={{
-//             color: 'white',
-//             textDecoration: 'none',
-//           }}
-//         >
-//           {title}
-//         </Link>
-//       </h1>
-//     </div>
-//   </div>
-// )
-
-const Header = ({title}) => (
-    <div className='header'>
-      <h1>
-        <Link to='/'>{title}</Link>
-      </h1>
-    </div>
-)
+`;
 
 const TemplateWrapper = ({ children, data, location }) => {
-  const title = data.site.siteMetadata.title
-  return <div className='wrapper' >
-    <Helmet
-      title={title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    {location.pathname !== '/' && <div className='sidebar'>
-      <Header title={title} />
-      <NavigationApp />
-    </div>}
-    <div className={location.pathname === '/' ? 'full-content' : 'content'}>
-      {children()}
+  const title = data.site.siteMetadata.title;
+  const pages = pageList();
+  return (
+    <div>
+      <Helmet
+        title={title}
+        meta={[
+          { name: "description", content: "Sample" },
+          { name: "keywords", content: "sample, something" }
+        ]}
+      />
+      <NavHeader>
+        {pages.map(page => (
+          <LinkWrapper key={page.id}>{page.name}</LinkWrapper>
+        ))}
+      </NavHeader>
+      <div className="wrapper">
+        <div className={location.pathname === "/" ? "full-content" : "content"}>
+          {children()}
+        </div>
+      </div>
     </div>
-  </div>
-}
+  );
+};
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;

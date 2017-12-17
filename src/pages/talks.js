@@ -4,11 +4,9 @@ import Paragraph, { SectionWrapper } from "../components/paragraph";
 
 export default () => {
   return [
-    <Header fontSize={36}>Tech Articles</Header>,
+    <Header fontSize={36}>Talks</Header>,
     <SectionWrapper>
-      <Paragraph>
-        I sometime write about Javascript and related frontend technologies
-      </Paragraph>
+      <Paragraph>Here are the talks I have given.</Paragraph>
     </SectionWrapper>
   ];
 };

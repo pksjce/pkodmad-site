@@ -5,7 +5,7 @@ const Paragraph = styled.div`
     margin: auto;
 `
 export const SectionWrapper = styled.div`
-margin-top: 10%
+    margin-top: 20px;
 `
 
 export default Paragraph;
