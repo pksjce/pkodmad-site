@@ -2,6 +2,7 @@
 path: "/blog/a-lesson-on-heaps"
 date: "2013-11-07"
 title: "A Lesson on Heaps"
+tags: "algorithm"
 ---
 
 The day I found [Mary Rose Cook's blog](http://maryrosecook.com/), I was fascinated! This was exactly the no nonsense virtual mentor I was looking for. A look through her projects is enough to intimidate faint hearted people like me. With great determination, I picked up [Fibonacci Heaps](https://github.com/maryrosecook/fibonacciheap) as my next project.  

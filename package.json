@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "pkodmad-site",
+  "description": "Pavithra Kodmad's website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pavithra Kodmad <pksjce@gmail.com>",
   "dependencies": {
     "classnames": "^2.2.5",
     "gatsby": "^1.9.63",
+    "gatsby-cli": "^1.1.27",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-catch-links": "^1.0.13",
     "gatsby-plugin-react-helmet": "^1.0.5",

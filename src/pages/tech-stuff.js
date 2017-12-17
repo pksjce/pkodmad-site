@@ -7,7 +7,7 @@ export default () => {
     <Header fontSize={36}>Tech Articles</Header>,
     <SectionWrapper>
       <Paragraph>
-        I sometime write about Javascript and related frontend technologies
+        I sometimes write about Javascript and related frontend technologies
       </Paragraph>
     </SectionWrapper>
   ];

@@ -2,6 +2,7 @@
 path: "/blog/writing-a-js-console"
 date: "2014-02-04"
 title: "Writing a JS Console"
+tags: "javascript"
 ---
 
 ## Objective
