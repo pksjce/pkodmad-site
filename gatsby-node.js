@@ -44,7 +44,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         if (!tagPageList[tags]) {
           tagPageList[tags] = [edge.node];
         } else {
-          tagPageList[tags].concat(edge.node);
+          tagPageList[tags].push(edge.node);
         }
         return tagPageList;
       },
@@ -52,14 +52,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     );
     Object.keys(tagPageList).forEach(tagName => {
       const nodes = tagPageList[tagName];
-      console.log(nodes);
       createPage({
         path: "/" + tagName,
         component: tagTemplate,
         context: {
           nodes,
-          tagName,
-          stuff: ["here", "here"]
+          tagName
         }
       });
     });

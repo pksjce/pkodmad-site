@@ -19,6 +19,10 @@ export const query = graphql`
   }
 `;
 
+const isFullPage = path => {
+  return path === "/" || path === "/talks";
+};
+
 const TemplateWrapper = ({ children, data, location }) => {
   const title = data.site.siteMetadata.title;
   const pages = pageList();
@@ -32,15 +36,22 @@ const TemplateWrapper = ({ children, data, location }) => {
         ]}
       />
       <NavHeader>
-        {pages.map(page => (
-          <LinkWrapper key={page.id}>{page.name}</LinkWrapper>
-        ))}
+        {!isFullPage(location.pathname) &&
+          pages.map(page => (
+            <LinkWrapper key={page.id}>{page.name}</LinkWrapper>
+          ))}
       </NavHeader>
-      <div className="wrapper">
-        <div className={location.pathname === "/" ? "full-content" : "content"}>
-          {children()}
+      {isFullPage(location.pathname) ? (
+        children()
+      ) : (
+        <div className="wrapper">
+          <div
+            className={location.pathname === "/" ? "full-content" : "content"}
+          >
+            {children()}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

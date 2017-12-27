@@ -1,28 +1,91 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import styled from "styled-components"
-import MyImage from '../components/my-image';
-import Header from '../components/header';
-import Paragraph, {SectionWrapper} from '../components/paragraph';
+import React from "react";
+import styled from "styled-components";
+import ImageBox from "../components/image-box";
+import {
+  Howls,
+  Noface,
+  EightHands,
+  Catbus,
+  Mononeke,
+  Haku,
+  Kiki,
+  Totoro,
+  Scarecrow,
+  Spiders
+} from "../components/home-page-images";
+import Title from "../components/home-titles";
 
+const Wrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 
+const Page = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+`;
 
-class IndexPage extends React.Component {
-  render() {
-    return <div>
-      <Header fontSize={50}>PAVITHRA KODMAD</Header>
-      <SectionWrapper><MyImage /></SectionWrapper>
-      <SectionWrapper>
-        <Paragraph>
-          I'm Pavithra. I work as a Developer at Atlassian Headquarters in Sydney.
-          I specialize in Front-end Technologies and have good experience at making Production ready applications.
-          I try to <Link to='/tech-stuff'>blog</Link> my learnings sometimes. I have also <Link to='talks'>spoken</Link> about tech that I'm fascinated by.
-        </Paragraph>
-      </SectionWrapper>
+const Center = styled.div`
+  grid-area: 2 / 2 / 4 / 4;
+  position: relative;
+`;
 
-    </div>
-  }
-}
+const Sidebox1 = styled.div`
+  grid-area: 2 / 1 / 4 / 2;
+  position: relative;
+`;
 
+const Sidebox2 = styled.div`
+  grid-area: 2 / 4 / span 2 / span 1;
+  position: relative;
+`;
 
-export default IndexPage
+const Box = styled.div`
+  position: relative;
+`;
+export default () => {
+  return (
+    <Wrapper>
+      <Page>
+        <Box>
+          <ImageBox src={Howls} />
+          <Title title="Tag1" />
+        </Box>
+        <Box>
+          <ImageBox src={EightHands} />
+        </Box>
+        <Box>
+          <ImageBox src={Noface} />
+        </Box>
+        <Box>
+          <ImageBox src={Spiders} />
+        </Box>
+        <Sidebox1>
+          <ImageBox src={Kiki} />
+        </Sidebox1>
+        <Center />
+        <Sidebox2>
+          <ImageBox src={Totoro} />
+        </Sidebox2>
+        <Box>
+          <ImageBox src={Haku} />
+        </Box>
+        <Box>
+          <ImageBox src={Scarecrow} />
+        </Box>
+        <Box>
+          <ImageBox src={Mononeke} />
+        </Box>
+        <Box>
+          <ImageBox src={Catbus} />
+        </Box>
+      </Page>
+    </Wrapper>
+  );
+};

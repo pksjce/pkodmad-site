@@ -1,6 +1,6 @@
 @media (min-width: 1200px) {
   body {
-    margin: 50px 20%;
+    margin: 50px 5%;
   }
 
   .sidebar {
@@ -26,6 +26,11 @@
     box-shadow: 0px 0px 4px #8cbea3;
     border-radius: 10px;
     padding: 20px;
+  }
+
+  .container {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
   }
 }
 
