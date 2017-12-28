@@ -1,8 +1,11 @@
 ---
-path: "/tech-stuff/notes-on-jest"
+path: "/blog/notes-on-jest"
 date: "2016-12-08"
 title: "Notes on Jest"
-tags: "react"
+tags:  
+    - "react"
+    - "testing"
+    - "js"
 ---
 
 During the past 4 months, I have been working on the Flipkart desktop website team. For me it meant finally working on code at scale. If there was any place where TDD would be appreciated, it was here, on user facing critical code. The tests were being written on a setup of Karma, Mocha, Sinon and Enzyme. It worked pretty great, but the major peeve for all of us, was that, it was so slow!

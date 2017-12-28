@@ -1,4 +1,7 @@
 const path = require("path");
+const kebabCase = require("lodash/kebabCase");
+
+const webpackLodashPlugin = require(`lodash-webpack-plugin`);
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
@@ -13,7 +16,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 150)
             html
             id
             frontmatter {
@@ -28,10 +31,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
+      console.log(result);
       return Promise.reject(result.errors);
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      console.log(node.frontmatter.tags);
+      console.log(node.frontmatter);
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
@@ -41,11 +45,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     const tagPageList = result.data.allMarkdownRemark.edges.reduce(
       (tagPageList, edge) => {
         const tags = edge.node.frontmatter.tags;
-        if (!tagPageList[tags]) {
-          tagPageList[tags] = [edge.node];
-        } else {
-          tagPageList[tags].push(edge.node);
-        }
+        tags.forEach(() => {
+          if (!tagPageList[tags]) {
+            tagPageList[tags] = [edge.node];
+          } else {
+            tagPageList[tags].push(edge.node);
+          }
+        });
         return tagPageList;
       },
       {}
@@ -53,7 +59,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     Object.keys(tagPageList).forEach(tagName => {
       const nodes = tagPageList[tagName];
       createPage({
-        path: "/" + tagName,
+        path: "/tags/" + kebabCase(tagName),
         component: tagTemplate,
         context: {
           nodes,
@@ -62,4 +68,15 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       });
     });
   });
+};
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  switch (stage) {
+    case `build-javascript`:
+      config.plugin(`Lodash`, webpackLodashPlugin, null);
+
+      break;
+  }
+
+  return config;
 };

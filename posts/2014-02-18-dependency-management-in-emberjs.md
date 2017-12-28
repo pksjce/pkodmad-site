@@ -2,7 +2,9 @@
 path: "/blog/dependency-management-in-ember"
 date: "2014-02-18"
 title: "Dependency Management in Ember"
-tags: "ember"
+draft: false
+tags: 
+	- "ember"
 ---
 
 Ember does a lot of behind-the-scenes work to maintain the relationships and connections between objects in your application. All of Ember's internal objects and those in your application namespace have references stored in another object named Container. This container is referred to under different circumstances during your application's lifecycle to retrieve needed objects. Ember also manages complex dependencies between these objects using the same container.

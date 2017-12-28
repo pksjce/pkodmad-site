@@ -2,7 +2,10 @@
 path: "/blog/prototypal-inheritance-in-javascript"
 date: "2014-02-05"
 title: "Prototypal Inheritance in Javascript"
-tags: "javascript"
+draft: false
+tags:
+- "js"
+- "basics"
 ---
 
 Javascript has prototypal inheritance. 

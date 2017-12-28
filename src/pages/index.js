@@ -34,6 +34,8 @@ const Page = styled.div`
 const Center = styled.div`
   grid-area: 2 / 2 / 4 / 4;
   position: relative;
+  opacity: 1;
+  background: white;
 `;
 
 const Sidebox1 = styled.div`
