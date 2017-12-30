@@ -15,11 +15,12 @@ const LinkWrapper = styled(Link)`
 export default ({ data }) => {
   const nodes = data.allMarkdownRemark.edges.map(edge => edge.node);
   return [
-    <Header fontSize={36}>Tech Articles</Header>,
     <SectionWrapper>
       <Paragraph>
+        <Header fontSize={"1.6em"}>Tech Articles</Header>
+
         <ul>
-          {nodes.map(node => (
+          {nodes.reverse().map(node => (
             <li key={node.id}>
               <LinkWrapper
                 style={{
