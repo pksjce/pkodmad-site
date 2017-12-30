@@ -14,12 +14,14 @@ const MenuGrid = styled.div`
 `;
 
 const MenuItem = styled(Link)`
-  background: brown;
+  background-image: linear-gradient(firebrick, brown);
   border-radius: 20px;
+  box-shadow: 0 1px 2px #ac1d1c;
   text-align: center;
   text-decoration: none;
   padding: 5px;
   color: white;
+  text-shadow: 0 1px 2px #ac1d1c;
 `;
 
 export default () => {
