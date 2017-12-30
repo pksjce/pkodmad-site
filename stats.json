@@ -1,0 +1,126 @@
+{
+  "assetsByChunkName": {
+    "path---blog-prototypal-inheritance-in-javascript": [
+      "path---blog-prototypal-inheritance-in-javascript-cfd73a8e824c995083de.js",
+      "path---blog-prototypal-inheritance-in-javascript-cfd73a8e824c995083de.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-169c265bdb4736e41c7b.js",
+      "component---src-pages-index-js-169c265bdb4736e41c7b.js.map"
+    ],
+    "path---tags": [
+      "path---tags-d14dc09e6914d8befdee.js",
+      "path---tags-d14dc09e6914d8befdee.js.map"
+    ],
+    "path---": [
+      "path----0068971248a032c4c0f2.js",
+      "path----0068971248a032c4c0f2.js.map"
+    ],
+    "path---tech-stuff": [
+      "path---tech-stuff-041a98307765b3e3c47d.js",
+      "path---tech-stuff-041a98307765b3e3c47d.js.map"
+    ],
+    "component---src-templates-blog-post-js": [
+      "component---src-templates-blog-post-js-58ad46e4bd21e6bdb36d.js",
+      "component---src-templates-blog-post-js-58ad46e4bd21e6bdb36d.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-02324b0250de5f60cc73.js",
+      "component---src-layouts-index-js-02324b0250de5f60cc73.js.map"
+    ],
+    "path---blog-dependency-management-in-ember": [
+      "path---blog-dependency-management-in-ember-6b5e334a093c35b0eaa5.js",
+      "path---blog-dependency-management-in-ember-6b5e334a093c35b0eaa5.js.map"
+    ],
+    "path---blog-a-lesson-on-heaps": [
+      "path---blog-a-lesson-on-heaps-f1ce488666d302c0a300.js",
+      "path---blog-a-lesson-on-heaps-f1ce488666d302c0a300.js.map"
+    ],
+    "component---src-pages-prose-js": [
+      "component---src-pages-prose-js-bb6be233ec55e4dcbb30.js",
+      "component---src-pages-prose-js-bb6be233ec55e4dcbb30.js.map"
+    ],
+    "path---index": [
+      "path---index-a0e39f21c11f6a62c5ab.js",
+      "path---index-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---prose": [
+      "path---prose-a0e39f21c11f6a62c5ab.js",
+      "path---prose-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---tags-ember": [
+      "path---tags-ember-923fdd3a8a4440f6a913.js",
+      "path---tags-ember-923fdd3a8a4440f6a913.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "commons": [
+      "commons-a13e87a3742cb632e313.js",
+      "commons-a13e87a3742cb632e313.js.map"
+    ],
+    "path---tags-react-testing-js": [
+      "path---tags-react-testing-js-92613fb167641c849949.js",
+      "path---tags-react-testing-js-92613fb167641c849949.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-tags-js": [
+      "component---src-pages-tags-js-042687c184c5ad6b433a.js",
+      "component---src-pages-tags-js-042687c184c5ad6b433a.js.map"
+    ],
+    "path---talks": [
+      "path---talks-a0e39f21c11f6a62c5ab.js",
+      "path---talks-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---blog-writing-a-js-console": [
+      "path---blog-writing-a-js-console-0b21b6ffbd46afb32735.js",
+      "path---blog-writing-a-js-console-0b21b6ffbd46afb32735.js.map"
+    ],
+    "component---src-pages-talks-js": [
+      "component---src-pages-talks-js-8499d606ffded0972a7a.js",
+      "component---src-pages-talks-js-8499d606ffded0972a7a.js.map"
+    ],
+    "app": [
+      "app-00eb97beb0dc35e2d1d3.js",
+      "build-js-styles.css",
+      "app-00eb97beb0dc35e2d1d3.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---tags-js-basics": [
+      "path---tags-js-basics-223224aa7fe42f50a84f.js",
+      "path---tags-js-basics-223224aa7fe42f50a84f.js.map"
+    ],
+    "path---blog-notes-on-jest": [
+      "path---blog-notes-on-jest-aab919b21e966b692b57.js",
+      "path---blog-notes-on-jest-aab919b21e966b692b57.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-templates-tags-page-js": [
+      "component---src-templates-tags-page-js-be1c6cf2bac243a92ac5.js",
+      "component---src-templates-tags-page-js-be1c6cf2bac243a92ac5.js.map"
+    ],
+    "component---src-pages-about-js": [
+      "component---src-pages-about-js-59e0976310ced5b2d4c0.js",
+      "component---src-pages-about-js-59e0976310ced5b2d4c0.js.map"
+    ],
+    "component---src-pages-tech-stuff-js": [
+      "component---src-pages-tech-stuff-js-df5d59c3ad2df01afe4a.js",
+      "component---src-pages-tech-stuff-js-df5d59c3ad2df01afe4a.js.map"
+    ],
+    "path---tags-js": [
+      "path---tags-js-faa9bdd7511609ffbf1e.js",
+      "path---tags-js-faa9bdd7511609ffbf1e.js.map"
+    ],
+    "path---about": [
+      "path---about-a0e39f21c11f6a62c5ab.js",
+      "path---about-a0e39f21c11f6a62c5ab.js.map"
+    ]
+  }
+}

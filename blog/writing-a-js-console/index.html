@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+ <html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-02324b0250de5f60cc73.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-js-58ad46e4bd21e6bdb36d.js" as="script"/><link rel="preload" href="/path---blog-writing-a-js-console-0b21b6ffbd46afb32735.js" as="script"/><link rel="preload" href="/app-00eb97beb0dc35e2d1d3.js" as="script"/><link rel="preload" href="/commons-a13e87a3742cb632e313.js" as="script"/><script id="webpack-manifest">
+            //<![CDATA[
+            window.webpackManifest = {"231608221292675":"app-00eb97beb0dc35e2d1d3.js","107818501498521":"component---src-templates-blog-post-js-58ad46e4bd21e6bdb36d.js","256743460581339":"component---src-templates-tags-page-js-be1c6cf2bac243a92ac5.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","263791100135453":"component---src-pages-about-js-59e0976310ced5b2d4c0.js","35783957827783":"component---src-pages-index-js-169c265bdb4736e41c7b.js","131947650545292":"component---src-pages-prose-js-bb6be233ec55e4dcbb30.js","195850678278728":"component---src-pages-tags-js-042687c184c5ad6b433a.js","231026285014322":"component---src-pages-talks-js-8499d606ffded0972a7a.js","268381602967577":"component---src-pages-tech-stuff-js-df5d59c3ad2df01afe4a.js","60335399758886":"path----0068971248a032c4c0f2.js","247983068512345":"path---blog-notes-on-jest-aab919b21e966b692b57.js","116717289290204":"path---blog-dependency-management-in-ember-6b5e334a093c35b0eaa5.js","30612591328884":"path---blog-prototypal-inheritance-in-javascript-cfd73a8e824c995083de.js","230138291271309":"path---blog-writing-a-js-console-0b21b6ffbd46afb32735.js","123211335786321":"path---blog-a-lesson-on-heaps-f1ce488666d302c0a300.js","177148829976923":"path---tags-react-testing-js-92613fb167641c849949.js","153190547950389":"path---tags-ember-923fdd3a8a4440f6a913.js","232352983075164":"path---tags-js-basics-223224aa7fe42f50a84f.js","269367677276329":"path---tags-js-faa9bdd7511609ffbf1e.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","273950069227526":"path---about-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-a0e39f21c11f6a62c5ab.js","149540533443074":"path---prose-a0e39f21c11f6a62c5ab.js","55702396619907":"path---tags-d14dc09e6914d8befdee.js","196976484363031":"path---talks-a0e39f21c11f6a62c5ab.js","63975833132740":"path---tech-stuff-041a98307765b3e3c47d.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-02324b0250de5f60cc73.js"}
+            //]]>
+            </script><style type="text/css" data-styled-components="ilqIQO bABmwe kOdhhk fqDJXM gJXILz dLjXxq kHOXCj jeirLe kPVmpd deUbTt" data-styled-components-is-local="true">/* sc-component-id: sc-bdVaJa */
+
+.jeirLe{font-size:1.6em;margin-top:20px;text-align:center;color:white;}
+/* sc-component-id: sc-bwzfXH */
+
+.deUbTt{margin:auto;background:white;padding:5px;border-radius:5px;margin:10px;}@media (min-width:420px){.deUbTt{margin:10px 20%;padding:20px;}}
+/* sc-component-id: sc-htpNat */
+
+.kPVmpd{margin-top:20px;height:90%;width:100%;overflow-y:auto;position:absolute;}
+/* sc-component-id: sc-dxgOiQ */
+
+.dLjXxq{color:white;text-decoration:none;}
+/* sc-component-id: sc-ckVGcZ */
+
+.fqDJXM{background-image:linear-gradient(firebrick,brown);box-shadow:0 1px 2px #ac1d1c;margin-top:20px;text-align:center;text-shadow:0 1px 2px #ac1d1c;padding:5px;}@media (min-width:420px){.fqDJXM{margin:10px 20%;text-align:right;background:none;}}
+/* sc-component-id: sc-jKJlTe */
+
+.gJXILz{margin:0 10px;display:inline-block;color:white;}
+/* sc-component-id: sc-eNQAEJ */
+
+.bABmwe{width:100%;height:100%;position:fixed;top:0;left:0;opacity:0.7;z-index:-1;}
+/* sc-component-id: sc-hMqMXs */
+
+.ilqIQO{position:absolute;top:0;left:0;width:100%;height:100%;}
+/* sc-component-id: sc-kEYyzF */
+
+.kOdhhk{display:grid;width:100%;height:100%;grid-template-rows:0.5fr 6fr;position:absolute;}
+/* sc-component-id: sc-kkGfuU */
+
+.kHOXCj{height:100%;position:relative;}
+</style><title data-react-helmet="true">Pavithra Kodmad</title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.61em 'Poppins',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Poppins',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.618rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.33471rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.21225rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.90825rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;color:inherit;font-family:'Merriweather',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.86558rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}ul{margin-left:1.61rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.61rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;font-size:0.85rem;line-height:1.61rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;font-size:1rem;line-height:1.61rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}blockquote{margin-left:1.61rem;margin-right:1.61rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.61rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.61rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.61rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.61rem;margin-bottom:calc(1.61rem / 2);margin-top:calc(1.61rem / 2);}li > ul{margin-left:1.61rem;margin-bottom:calc(1.61rem / 2);margin-top:calc(1.61rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.61rem / 2);}code{font-size:0.85rem;line-height:1.61rem;}kbd{font-size:0.85rem;line-height:1.61rem;}samp{font-size:0.85rem;line-height:1.61rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.07333rem;padding-right:1.07333rem;padding-top:0.805rem;padding-bottom:calc(0.805rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><link href="//fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i|Merriweather:700,700i" rel="stylesheet" type="text/css"/><script>
+  !function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",[
+  "/commons-a13e87a3742cb632e313.js","/app-00eb97beb0dc35e2d1d3.js","/path---blog-writing-a-js-console-0b21b6ffbd46afb32735.js","/component---src-templates-blog-post-js-58ad46e4bd21e6bdb36d.js","/component---src-layouts-index-js-02324b0250de5f60cc73.js"
+])
+  </script><style id="gatsby-inlined-css">@media (min-width:1200px){body{margin:50px 5%}.sidebar{position:fixed;top:70px;width:200px;text-align:center}.content{width:80%;margin-left:20%}.full-content{width:100%}.wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;background-color:#fff;color:#444;box-shadow:0 0 4px #8cbea3;border-radius:10px;padding:20px}.container{-ms-grid-columns:25% 25% 25% 25%;grid-template-columns:25% 25% 25% 25%;-ms-grid-rows:25% 25% 25% 25%;grid-template-rows:25% 25% 25% 25%}}@media (min-width:600px) and (max-width:1200px){.wrapper{background-color:#fff;color:#444;box-shadow:0 0 4px #8cbea3;border-radius:10px}.content{padding-top:160px}.sidebar{position:fixed;top:0;width:100%;background:#c1e6d2}}body{height:100%}h1>a{text-decoration:none}</style></head><body><div id="___gatsby"><div data-reactroot=""><div class="sc-hMqMXs ilqIQO"><img class="sc-eNQAEJ bABmwe" src="/static/home_bookshelf.3aa4d81d.jpg"/><div class="sc-kEYyzF kOdhhk"><div class="sc-ckVGcZ fqDJXM"><div class="sc-jKJlTe gJXILz"><a class="sc-dxgOiQ dLjXxq" href="/">Home</a></div><div class="sc-jKJlTe gJXILz"><a class="sc-dxgOiQ dLjXxq" href="/tech-stuff">Tech Articles</a></div><div class="sc-jKJlTe gJXILz"><a class="sc-dxgOiQ dLjXxq" href="/prose">Writing</a></div><div class="sc-jKJlTe gJXILz"><a class="sc-dxgOiQ dLjXxq" href="/talks">Talks</a></div></div><div class="sc-kkGfuU kHOXCj"><div class="sc-bdVaJa jeirLe" font-size="1.6em">Writing a JS Console</div><div class="sc-htpNat kPVmpd"><div class="sc-bwzfXH deUbTt"><h3>February 04, 2014</h3><div><h2>Objective</h2>
+<p>The objective of this exercise is to build a working javascript console on the browser. </p>
+<h2>Analysis</h2>
+<p>The functionality of this console must be as follows -  </p>
+<ol>
+<li>Should interpret only code that is input into the console box.This maybe single line or multiple lines.</li>
+<li>Should maintain the history of what was interpreted before and print this below the console.</li>
+<li>Should show any errors thrown during evaluation.</li>
+</ol>
+<h2>Solution</h2>
+<h3>Trial 1</h3>
+<h4>Test cases -</h4>
+<p>(Initial) </p>
+<ol>
+<li>var s = 1; --> undefined  </li>
+<li>s --> 1;  </li>
+<li>z --> Error:z is not defined.</li>
+</ol>
+<p>The first thought on interpreting javascript is to use eval() method and start printing its results.<br>
+Add a try/catch to catch any errors and display them;</p>
+<h4>Javascript</h4>
+<pre><code class="language-javascript">    
+$(document).ready(function(){
+    var consoley = $('#console');
+    consoley.keypress(function(evt){
+        if(evt.keyCode === 13){
+            var js = consoley.val();
+            var x;
+            var type = 'result';
+            
+            try{
+                x = eval(js);
+            }catch(e){
+                x = e.message;
+                type= 'error';
+            }
+            $('#userjs').html(js);
+            var ans = make_nice(x, type);
+            $('#answer').html(ans);
+        }
+    });
+});
+
+function make_nice(x, type){
+    if(type == "result"){
+        if(x === undefined){
+            return "undefined";
+        }   
+    } else{
+        return "Error: " + x;
+    }
+    return x;
+    
+}
+</code></pre>
+<h4>HTML</h4>
+<pre><code class="language-html">    &#x3C;html>
+        &#x3C;head>
+            &#x3C;script src='jquery.js'>
+            &#x3C;/script>
+            &#x3C;script src='main.js'>
+            &#x3C;/script>
+        &#x3C;/head>
+        &#x3C;body>
+            &#x3C;div>
+                &#x3C;input type = 'text' id='console'>
+            &#x3C;/div>
+            &#x3C;div id='userjs'>
+            &#x3C;/div>
+            &#x3C;div id='answer'>
+            &#x3C;/div>
+        &#x3C;/body>
+    &#x3C;/html>
+</code></pre>
+<p>Since undefined cannot be printed, I had to make a <code>make_nice</code> method where I set <code>undefined</code> as the output.</p>
+<p>This method passes the first and third test cases but fails the second one.
+The reason for this as per <a href="https://weblogs.java.net/blog/driscoll/archive/2009/09/08/eval-javascript-global-context">Context for evals</a>, is that eval is executed in the scope of the callback function. This scope is different every different time the callback function is called. Hence the result of the first eval was effectively "deleted" and new scope was created for the next event callback. The solution for this is to call eval with scope that persists and in our case global scope.</p>
+<h3>Trial 2</h3>
+<p>Call <code>eval()</code> as <code>window.eval()</code></p>
+<p>With no change in html lets change the keypress callback to </p>
+<h4>Javascript</h4>
+<pre><code class="language-javascript">    consoley.keypress(function(evt){
+        if(evt.keyCode === 13){
+            var js = consoley.val();
+            var x;
+            var type = 'result';
+            
+            try{
+                x = eval(js);
+            }catch(e){
+                x = e.message;
+                type= 'error';
+            }
+            $('#userjs').html(js);
+            var ans = make_nice(x, type);
+            $('#answer').html(ans);
+        }
+    });
+</code></pre>
+<p>This change seems to have done the trick and is passing all 3 of our test cases.<br>
+Let's create another test case.
+Add below snippet of code to the javascript of the page.</p>
+<pre><code class="language-javascript">    var s = 1;
+</code></pre>
+<p>Now we see that we are able to override the value of <code>s</code> in our mock console. This is highly undesirable behaviour. We do not want users of our console to be able to modify the objects on the page itself and thus mess with the functionality of the page.</p>
+<p>Solutions for this could be -   </p>
+<h3>Trial 3</h3>
+<p>Create a separate object and execute eval in its scope.</p>
+<pre><code class="language-javascript">var s = 2;
+$(document).ready(function(){
+    var consoley = $('#console');
+    consoley.keypress(function(evt){
+        if(evt.keyCode === 13){
+            var js = consoley.val();
+            var x;
+            var type = 'result';
+            var mockConsole = new mock_console();
+            try{
+                x = mockConsole.log(js);
+            }catch(e){
+                x = e.message;
+                type= 'error';
+            }
+            $('#userjs').html(js);
+            var ans = make_nice(x, type);
+            $('#answer').html(ans);
+        }
+    });
+});
+
+var mock_console = function(){
+    return {
+        log:function(str){
+            var result = eval.call(this, str);
+            return result;
+        }
+    }
+}
+</code></pre>
+<p>This still does not solve our problem because the global scope can still be modified through this function.</p>
+<h3>Trial 4</h3>
+<p>After a lot of search, the only way to escape context of the page alltogether is to execute the eval in an iframe. This is the only place where another html page can be created and still be accessed by our page.</p>
+<p>So I created an iframe by   </p>
+<pre><code class="language-html">    &#x3C;iframe id='myframe' style='display:none'>
+    &#x3C;/iframe>
+</code></pre>
+<p>By changing my mockconsole to point to iframe's contentWindow, we have -</p>
+<pre><code class="language-javascript">    var mockConsole = document.getElementById('myframe').contentWindow;
+    try{
+        x = mockConsole.eval(js);
+    }catch(e){
+        x = e.message;
+        type= 'error';
+    }
+</code></pre>
+<p>Now, when we try to evaluate <code>s</code>, we are not able to access the globally defined <code>s = 2</code>  </p>
+<p>Its a pass!</p>
+<h3>Add Console features</h3>
+<h4>History on uparrow/downarrow</h4>
+<p>This seems to be an easy feature to add. But one caveat I found was<br>
+<code>Arrow keys cannot be detected on keypress event.</code><br>
+Once this was cleared, I added a keydown event on <code>consoley</code> with the following functionality</p>
+<pre><code class="language-javascript">    consoley.keydown(function(evt){
+        var len = historyStack.length;
+        if(evt.keyCode === 38 &#x26;&#x26; len > 0){
+            uparrowhit +=1;
+            if(len >= uparrowhit){
+                consoley.val(historyStack[len - uparrowhit]);
+            }
+        } else if(evt.keyCode === 40 &#x26;&#x26; len > 0 &#x26;&#x26; uparrowhit > 0){
+            if(len >= uparrowhit &#x26;&#x26; !evt.programmatic){
+                uparrowhit -=1;
+                consoley.val(historyStack[len - uparrowhit]);
+            } else {
+                return;
+            }
+        }
+    });
+</code></pre>
+<p>This seems to work fine, except I am not able to position the cursor of the text box at the end of the text after addition of the code line from history. Turns out <code>evt.preventDefault()</code> at the end of the event handling does the trick.</p>
+<h3>Add autocompletion.</h3>
+<p>This to me seemed a harder task than the feature above.
+Autocompleting would include -  </p>
+<h5>Get all properties of input object.</h5>
+<pre><code class="language-javascript">    //always cache window properties - in our case iframe windows properties.
+    var mockConsole = document.getElementById('myframe').contentWindow;
+    windowProps = function(){
+        var props = [];
+        for(key in mockConsole){
+            props.push(key);
+        }
+        return props;
+    }();
+    //now check if a dot seperated object needs to be evaluated.
+    function addAutocomplete(consoley, js){
+        var inputSplit = js.split('.');
+        var len = inputSplit.length;
+        var autocompletelist = windowProps;
+        var filter = js;
+        if(inputSplit.length > 1 &#x26;&#x26; inputSplit[0] !== 'window'){
+            filter = inputSplit[len -1];
+            var evalStr = inputSplit.slice(0, len-1).join('.');
+            var evaled = eval(evalStr);
+            autocompletelist = [];
+            for(key in evaled){
+                autocompletelist.push(key);
+            }
+        }
+        var autocompleteStr = getAutocompleteStr(autocompletelist, filter);
+        alert(autocompleteStr);
+    }
+
+    function getAutocompleteStr(list, filter){
+        var filterList = list.filter(function(item){
+            if(item.indexOf(filter) === 0){
+                return item;
+            }
+        })
+        filterList.sort(function(a,b){
+            if(a>b){
+                return 1;
+            } else if(a&#x3C;b){
+                return -1;
+            } else {
+                return 1;
+            }
+        })
+        if(filterList.length){
+            return filterList[0];
+        } 
+        return;
+    }
+</code></pre>
+<p>The <code>alert(autocompleteStr)</code> now gives me the right autocomplete string after every keystroke.</p>
+<h4>Display the autocomplete as a grayed out string behind the input.</h4>
+<pre><code class="language-javascript">        &#x3C;div>
+            &#x3C;input type = 'text' id='console'>
+            &#x3C;div id='autocomplete'>&#x3C;/div>
+        &#x3C;/div>
+
+        //CSS
+        #console{
+            width: 98%;
+            border: 0;
+            border-bottom: 1px solid lightgray;
+            position: absolute;
+            background: transparent
+        }
+        #console:focus{
+            outline: 0;
+            border-bottom: 1px solid lightgray;
+        }
+        #autocomplete{
+            color: lightgray;
+            line-height: 138%;
+            position: absolute;
+            z-index: 9;
+        }
+
+        //Javascript
+        var autocompleteElem = $('#autocomplete');
+        autocompleteElem.css('left',  offset + autodistance);
+        autocompleteStr = autocompleteStr.substr(filterLen, autocompleteStr.length);
+        autocompleteElem.html(autocompleteStr);
+</code></pre>
+<p>This seems to be somewhat satisfactory.</p>
+<h4>Left Arrow must complete the pending autocomplete.</h4>
+<pre><code>```javascript
+consoley.keypress(function(evt){
+    var js = consoley.val();
+    var key = self._whichKey(evt);
+    if(key === 13){
+        self._uparrowhit = 0;
+        var x;
+        var type = 'result';
+        
+        try{
+            x = mockConsole.eval(js);
+        }catch(e){
+            x = e.message;
+            type= 'error';
+        }
+        self._historyStack.push(js);
+        consoley.val('');
+        self._autocomplete.html('');
+        var ans = self.make_nice(x, type);
+        self._write(js, ans);
+    }
+});
+```
+</code></pre>
+<h3>Making this a plugin</h3>
+<p>The code needs to be modularized and made somewhat like a plugin so that it can be injected to any given div element.  </p></div></div></div></div></div></div></div></div></body></html>

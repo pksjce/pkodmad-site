@@ -1,0 +1,2 @@
+webpackJsonp([55702396619907],{364:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Pavithra Kodmad"}},allMarkdownRemark:{group:[{fieldValue:"basics",totalCount:1},{fieldValue:"ember",totalCount:1},{fieldValue:"js",totalCount:4},{fieldValue:"react",totalCount:1},{fieldValue:"testing",totalCount:1}]}},pathContext:{}}}});
+//# sourceMappingURL=path---tags-d14dc09e6914d8befdee.js.map
