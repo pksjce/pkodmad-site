@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Header from "../components/header";
 import Paragraph, { SectionWrapper } from "../components/paragraph";
 
 const TagHeader = styled.h1`
@@ -9,12 +10,14 @@ const TagHeader = styled.h1`
 export default ({ data, pathContext }) => {
   return (
     <div>
-      <TagHeader>{`#${pathContext.tagName}`}</TagHeader>
+      <Header>{`#${pathContext.tagName}`}</Header>
       {pathContext.nodes.map(node => {
         return (
           <SectionWrapper key={node.frontmatter.id}>
-            <h3>{node.frontmatter.title}</h3>
-            <Paragraph>{node.excerpt}</Paragraph>
+            <Paragraph>
+              <h3>{node.frontmatter.title}</h3>
+              <Paragraph>{node.excerpt}</Paragraph>
+            </Paragraph>
           </SectionWrapper>
         );
       })}

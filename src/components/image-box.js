@@ -7,7 +7,8 @@ const Image = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.7;
+  z-index: -1;
 `;
 
 export default ({ src }) => <Image src={src} />;

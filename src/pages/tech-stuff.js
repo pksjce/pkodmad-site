@@ -2,27 +2,38 @@ import React from "react";
 import Header from "../components/header";
 import Paragraph, { SectionWrapper } from "../components/paragraph";
 import Link from "gatsby-link";
+import styled from "styled-components";
+
+const LinkWrapper = styled(Link)`
+  color: red;
+
+  &:visited {
+    color: brown;
+  }
+`;
 
 export default ({ data }) => {
   const nodes = data.allMarkdownRemark.edges.map(edge => edge.node);
   return [
-    <div>
-      <h1>Tech Articles</h1>
-      <ul>
-        {nodes.map(node => (
-          <li key={node.id}>
-            <Link
-              style={{
-                textDecoration: `none`
-              }}
-              to={`${node.frontmatter.path}`}
-            >
-              {node.frontmatter.title} ({node.timeToRead} mins)
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Header fontSize={36}>Tech Articles</Header>,
+    <SectionWrapper>
+      <Paragraph>
+        <ul>
+          {nodes.map(node => (
+            <li key={node.id}>
+              <LinkWrapper
+                style={{
+                  textDecoration: `none`
+                }}
+                to={`${node.frontmatter.path}`}
+              >
+                {node.frontmatter.title} ({node.timeToRead} mins)
+              </LinkWrapper>
+            </li>
+          ))}
+        </ul>
+      </Paragraph>
+    </SectionWrapper>
   ];
 };
 

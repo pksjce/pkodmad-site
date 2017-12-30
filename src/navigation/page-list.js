@@ -1,23 +1,33 @@
 import React from "react";
 import Link from "gatsby-link";
+import styled from "styled-components";
+
+const LinkItem = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
 
 export default () => {
   return [
     {
       id: "home",
-      name: <Link to="/">Home</Link>
+      link: <LinkItem to="/">Home</LinkItem>,
+      name: "Home"
     },
     {
       id: "tech-stuff",
-      name: <Link to="/tech-stuff">Tech Articles</Link>
+      link: <LinkItem to="/tech-stuff">Tech Articles</LinkItem>,
+      name: "Tech Articles"
     },
     {
       id: "writing",
-      name: <Link to="/prose">Writing</Link>
+      link: <LinkItem to="/prose">Writing</LinkItem>,
+      name: "Writing"
     },
     {
       id: "talks",
-      name: <Link to="/talks">Talks</Link>
+      link: <LinkItem to="/talks">Talks</LinkItem>,
+      name: "Talks"
       // children: () => {
       //   return new Promise((resolve, reject) => {
       //       setTimeout(() => resolve([{

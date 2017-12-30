@@ -1,22 +1,18 @@
 import React from "react";
 import Helmet from "react-helmet";
+import Header from "../components/header";
+import Paragraph, { SectionWrapper } from "../components/paragraph";
 
 export default function Template(props) {
-  console.log(props.data);
   const { markdownRemark: post } = props.data;
   return [
-    <div className="blog-post-container">
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
-
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
+    <Header fontSize={"1.6em"}>{post.frontmatter.title}</Header>,
+    <SectionWrapper>
+      <Paragraph>
         <h3>{post.frontmatter.date}</h3>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
-    </div>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Paragraph>
+    </SectionWrapper>
   ];
 }
 
