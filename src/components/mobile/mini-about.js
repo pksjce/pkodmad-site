@@ -7,17 +7,19 @@ const CenterPiece = styled.div`
 `;
 
 const AboutWrapper = styled.div`
+  background-image: linear-gradient(white, lightyellow);
+  box-shadow: 0 1px 2px grey;
   width: fit-content;
   margin: 10px auto;
-  background-color: darkslategrey;
   padding: 10px;
-  color: white;
+  color: black;
   border-radius: 10px;
 `;
 
 const NameText = styled.div`
   text-align: center;
   font-size: 2em;
+  line-height: 1em;
   margin: 15px;
 `;
 
