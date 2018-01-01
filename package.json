@@ -14,13 +14,16 @@
     "gatsby-plugin-styled-components": "^2.0.3",
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.9",
+    "gatsby-source-medium": "^1.0.9",
     "gatsby-transformer-remark": "^1.7.23",
     "react": "^16.2.0",
     "react-call-return": "^0.5.0",
     "react-dom": "^16.2.0",
+    "rss-to-json": "^1.0.3",
     "styled-components": "^2.2.4",
     "typography-theme-lawton": "^0.15.10",
-    "typography-theme-noriega": "^0.15.10"
+    "typography-theme-noriega": "^0.15.10",
+    "xml2js": "^0.4.19"
   },
   "keywords": [
     "gatsby"
@@ -34,6 +37,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "bluebird": "^3.5.1",
     "gh-pages": "^1.1.0",
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",

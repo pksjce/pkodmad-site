@@ -20,4 +20,8 @@ export const SectionWrapper = styled.div`
   position: absolute;
 `;
 
+export const TextWrapper = styled.div`
+  padding: 20px;
+`;
+
 export default Paragraph;

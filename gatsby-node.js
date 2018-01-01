@@ -8,6 +8,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
   const tagTemplate = path.resolve(`src/templates/tags-page.js`);
+  const mediumPostTemplate = path.resolve(`src/templates/medium-post.js`);
   return graphql(`
     {
       allMarkdownRemark(
@@ -28,6 +29,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         }
       }
+      allMediumPub(limit: 1000) {
+        edges {
+          node {
+            id
+            path
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
@@ -39,6 +48,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         path: node.frontmatter.path,
         component: blogPostTemplate,
         context: {}
+      });
+    });
+    result.data.allMediumPub.edges.forEach(({ node }) => {
+      console.log(node.path);
+      createPage({
+        path: node.path,
+        component: mediumPostTemplate
       });
     });
     const tagPageList = result.data.allMarkdownRemark.edges.reduce(
