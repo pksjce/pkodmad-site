@@ -3,6 +3,7 @@ import Me from "./me.jpg";
 import styled from "styled-components";
 
 const ImageCrop = styled.div`
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   height: 8em;
   width: 8em;
   overflow: hidden;
