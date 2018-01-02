@@ -6,7 +6,10 @@ const Promise = require("bluebird");
 const loadRss = Promise.promisify(load);
 
 const processDatum = item => {
-  const digest = crypto.createHash(`md5`).update(JSON.stringify(item)).digest(`hex`);
+  const digest = crypto
+    .createHash(`md5`)
+    .update(JSON.stringify(item))
+    .digest(`hex`);
   const data = Object.assign({}, item, {
     id: item.guid[0]._,
     path: `/prose/${kebabCase(item.title)}`,
