@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 `;
 
 const ContentWrapper = styled.div`
@@ -62,7 +63,15 @@ const TemplateWrapper = ({ children, data, location }) => {
           <ContentWrapper>
             <NavHeader>
               {pages.map(page => (
-                <LinkWrapper key={page.id}>{page.link}</LinkWrapper>
+                <LinkWrapper
+                  key={page.id}
+                  activeStyle={{
+                    borderBottom: "3px solid white"
+                  }}
+                  to={page.link}
+                >
+                  {page.name}
+                </LinkWrapper>
               ))}
             </NavHeader>
             <Content>{children()}</Content>

@@ -8,27 +8,25 @@ class TagsPageRoute extends React.Component {
   render() {
     const allTags = this.props.data.allMarkdownRemark.group;
 
-    return [
-      <Header fontSize={"1.6em"}>Tags</Header>,
-      <SectionWrapper>
-        <Paragraph>
-          <ul>
-            {allTags.map(tag => (
-              <li key={tag.fieldValue}>
-                <Link
-                  style={{
-                    textDecoration: `none`
-                  }}
-                  to={`/tags/${kebabCase(tag.fieldValue)}/`}
-                >
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Paragraph>
-      </SectionWrapper>
-    ];
+    return (
+      <Paragraph>
+        <Header fontSize={"3em"}>Tags</Header>
+        <ul>
+          {allTags.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link
+                style={{
+                  textDecoration: `none`
+                }}
+                to={`/tags/${kebabCase(tag.fieldValue)}/`}
+              >
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Paragraph>
+    );
   }
 }
 

@@ -9,18 +9,16 @@ const TagHeader = styled.h1`
 
 export default ({ data, pathContext }) => {
   return (
-    <div>
+    <Paragraph>
       <Header>{`#${pathContext.tagName}`}</Header>
       {pathContext.nodes.map(node => {
         return (
-          <SectionWrapper key={node.frontmatter.id}>
-            <Paragraph>
-              <h3>{node.frontmatter.title}</h3>
-              <Paragraph>{node.excerpt}</Paragraph>
-            </Paragraph>
-          </SectionWrapper>
+          <div>
+            <h3>{node.frontmatter.title}</h3>
+            <Paragraph>{node.excerpt}</Paragraph>
+          </div>
         );
       })}
-    </div>
+    </Paragraph>
   );
 };

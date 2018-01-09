@@ -17,7 +17,7 @@ export default ({ data }) => {
   return [
     <SectionWrapper>
       <Paragraph>
-        <Header fontSize={"1.6em"}>Tech Articles</Header>
+        <Header fontSize={"3em"}>Tech Articles</Header>
 
         <ul>
           {nodes.reverse().map(node => (

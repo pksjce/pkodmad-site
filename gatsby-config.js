@@ -23,6 +23,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+        name: "data"
+      }
+    },
+    {
       resolve: `gatsby-plugin-medium-publication`
     },
     {
@@ -30,6 +37,7 @@ module.exports = {
       options: {
         plugins: [] // gatsby-remark-prismjs, gatsby-remark-copy-linked-files, gatsby-remark-images
       }
-    }
+    },
+    `gatsby-transformer-json`
   ]
 };

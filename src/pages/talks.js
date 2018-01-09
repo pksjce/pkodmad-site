@@ -1,58 +1,91 @@
 import React from "react";
 import Header from "../components/header";
-import Paragraph, { SectionWrapper } from "../components/paragraph";
+import Paragraph, { TextWrapper } from "../components/paragraph";
 import styled from "styled-components";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-row: 25% 25% 25% 25%s;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+const Name = styled.div`
+  font-family: "Ranga", cursive;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: underline;
+`;
+const Description = styled.div`
+  margin: 5px 0;
+`;
+const Conference = styled.div`
+  margin: 5px 0;
+`;
+const Reference = styled.div`
+  margin: 5px 0;
+`;
+const Youtube = styled.div`
+  margin: 5px 0;
+`;
+const Slides = styled.div`
+  margin: 5px 0;
 `;
 
-const Items = styled.div`
-  width: 250px;
-  height: 250px;
-  border: 4px solid black;
-`;
-
-const ItemNested = styled.div`
-  margin: 20px;
-  width: 160px;
-  height: 210px;
-`;
-
-export default () => {
+export default ({ data }) => {
+  const talkList = data.allTalksJson.edges;
   return [
-    <Header fontSize={36}>Talks</Header>,
-    <SectionWrapper>
-      <Grid>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-        <Items>
-          <ItemNested>1</ItemNested>
-        </Items>
-      </Grid>
-    </SectionWrapper>
+    <Paragraph>
+      <Header fontSize="3em">Talks</Header>,
+      {talkList.map(talks => {
+        const { node } = talks;
+        const {
+          id,
+          name,
+          description,
+          conference,
+          conf_ref,
+          location,
+          youtube,
+          slides
+        } = node;
+        return (
+          <TextWrapper>
+            <Name>{name}</Name>
+            <Description>{description}</Description>
+            <Conference>{`${conference} in ${location}`}</Conference>
+            {conf_ref && (
+              <Reference>
+                <a href={conf_ref}>{`Talk details`}</a>
+              </Reference>
+            )}
+            {youtube && (
+              <Youtube>
+                <a href={youtube} target="_blank">
+                  Talk Video
+                </a>
+              </Youtube>
+            )}
+            {slides && (
+              <Slides>
+                <a href={slides} target="_blank">{`Presentation`}</a>
+              </Slides>
+            )}
+          </TextWrapper>
+        );
+      })}
+    </Paragraph>
   ];
 };
+
+export const talksQuery = graphql`
+  query TalksQuery {
+    allTalksJson {
+      edges {
+        node {
+          id
+          name
+          description
+          conference
+          conf_ref
+          location
+          youtube
+          slides
+        }
+      }
+    }
+  }
+`;

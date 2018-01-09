@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
 
 import Title from "../components/home-titles";
 
 import MyImage from "../components/my-image";
 import { Menu, MiniAbout } from "../components/mobile";
+import { TextWrapper } from "../components/paragraph";
+import Header from "../components/header";
 
 const Page = styled.div`
   display: grid;
@@ -36,7 +39,8 @@ const Center = styled.div`
     grid-area: 2 / 2 / 4 / 4;
     position: relative;
     opacity: 1;
-    background: white;
+    background: #0000006b;
+    color: white;
   }
 `;
 
@@ -60,12 +64,22 @@ const Sidebox2 = styled.div`
   }
 `;
 
+const LinkColor = styled(Link)`
+  color: #b2d4ff;
+`;
+
+const Name = styled(Header)`
+  font-family: "Special Elite", cursive;
+  font-size: 3em;
+`;
+
 const Box = styled.div`
   @media (max-width: 420px) {
     display: none;
   }
   position: relative;
 `;
+
 export default () => {
   return (
     <div>
@@ -78,6 +92,17 @@ export default () => {
       <Page>
         <Center>
           <MyImage />
+          <Name>Pavithra Kodmad</Name>
+          <TextWrapper>
+            I'm Pavithra. I work as a Developer at Atlassian Headquarters in
+            Sydney. I specialize in Front-end Technologies and have good
+            experience at making Production ready applications. I
+            <LinkColor to="/tech-stuff"> blog</LinkColor> my learnings
+            sometimes. I have also <LinkColor to="/talks">spoken </LinkColor>
+            about tech that I'm fascinated by. Reading is my most notorious
+            passion. My most neglected hobbies are
+            <LinkColor to="/prose"> writing</LinkColor> and drawing.
+          </TextWrapper>
         </Center>
       </Page>
     </div>

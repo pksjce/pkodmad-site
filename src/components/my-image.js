@@ -9,6 +9,7 @@ const ImageCrop = styled.div`
   overflow: hidden;
   border-radius: 50%;
   margin: auto;
+  margin-top: 20px;
 `;
 
 const Image = styled.div`

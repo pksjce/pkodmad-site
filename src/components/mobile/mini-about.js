@@ -21,6 +21,7 @@ const NameText = styled.div`
   font-size: 2em;
   line-height: 1em;
   margin: 15px;
+  font-family: "Special Elite", cursive;
 `;
 
 const AboutText = styled.div`

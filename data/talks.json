@@ -1,0 +1,89 @@
+[
+  {
+    "name": "As simple as an AST",
+    "description":
+      "I got invited to talk at this fabulous conference. It was one of the most enjoyable tech community experiences I have had. I met really cool people, who have later become friends too. My talk garnered a lot of appreciation and even established me as an expert in codemods and asts in general.",
+    "conference": "JSHeroes",
+    "conf-ref": "https://2017.jsheroes.io/",
+    "location": "Cluj-Napoca, Romania",
+    "youtube": "https://www.youtube.com/watch?v=LRKlqR6KY_E",
+    "slides": "https://github.com/pksjce/pavithra-jsheroes-ast"
+  },
+  {
+    "name": "Deep Dive into Rxjs Observables",
+    "description":
+      "This was my first conference talk. It came out of a small search service that I built internally at Flipkart. I got obsessed with the stream way of programming. I find it a little cumbersome now, but at that time it gave me some functional fundamentals that I will never forget.",
+    "conference": "JSFoo",
+    "conf-ref":
+      "https://jsfoo.talkfunnel.com/2015/43-deep-dive-into-rxjs-observables",
+    "location": "Bangalore, India",
+    "youtube": "https://www.youtube.com/watch?v=nJkHo-zJXZk",
+    "slides": "http://slides.com/pavithrakodmad/deck#/"
+  },
+  {
+    "name": "React with Reason",
+    "description":
+      "This was the first talk that the organisers invited me to without me asking them. It was such a surreal experience to share stage with awesome people from the Javascript world. I was completly star struck",
+    "conference": "Zeit Day",
+    "conf-ref": "https://zeit.co/day/2017/berlin",
+    "location": "Berlin, Germany",
+    "youtube": "https://www.youtube.com/watch?v=MOcFGfxJbhU"
+  },
+  {
+    "name": "Redux with AngularJs",
+    "description":
+      "This talk was about the work I did in a legacy application I was working on in Flipkart. It was an Angular application that desperately needed some facelift. To make it more manageable, I added redux to it, which really improved its workflow.",
+    "conference": "Angular connect",
+    "conf-ref": "https://www.angularconnect.com/2016/speakers/#pavithra-kodmad",
+    "location": "London, England",
+    "youtube": "https://www.youtube.com/watch?v=_G-e59CZRqw "
+  },
+  {
+    "name": "Webpack Unpacked",
+    "description":
+      "A short history on Module bundlers with an introduction to Webpack",
+    "conference": "JSChannel",
+    "conf-ref": "http://2016.jschannel.com/",
+    "location": "Bangalore, India",
+    "youtube": "https://www.youtube.com/watch?v=VB0EqRW5klo",
+    "slides": "http://slides.com/pavithrakodmad/deck-4#"
+  },
+  {
+    "name": "React Call Return",
+    "description": "A look into some experimental React API",
+    "conference": "Front End Forum, Atlassian",
+    "location": "Sydney, Australia",
+    "slides": "https://github.com/pksjce/react-cr-presentation"
+  },
+  {
+    "name": "Modern Javascript",
+    "description":
+      "An Introduction to Modern Javascript trends for Javascript Devs",
+    "conference": "Girls Who Javascript Meetup",
+    "conf-ref": "https://www.meetup.com/Girls-Who-Javascript/",
+    "location": "Bangalore, India",
+    "slides": "http://slides.com/pavithrakodmad/modern-javascript"
+  },
+  {
+    "name": "Jest - Introduction",
+    "description":
+      "An Introduction to Jest for developers who know Testing in Javascript",
+    "conference": "Workshop for Team-mates",
+    "location": "Sydney, Australia",
+    "slides": "https://www.slideshare.net/pksjce/introduction-to-jest-84033047"
+  },
+  {
+    "name": "React Redux",
+    "description": "Teaching React and Redux",
+    "conference": "Workshop for Team-mates",
+    "location": "Bangalore, India",
+    "slides": "http://slides.com/pavithrakodmad/m#/"
+  },
+  {
+    "name": "Backburner",
+    "description": "A dive into Emberjs framework internals",
+    "conference": "Bangalore Javascript Meetup",
+    "location": "Bangalore, India",
+    "slides": "http://slides.com/pavithrakodmad/b#/"
+  }
+]

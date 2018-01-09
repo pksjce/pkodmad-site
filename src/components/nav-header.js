@@ -10,6 +10,7 @@ const Header = styled.div`
   @media (min-width: 420px) {
     margin: 10px 20%;
     text-align: right;
+    box-shadow: none;
     background: none;
   }
 `;
