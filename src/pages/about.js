@@ -11,19 +11,16 @@ import Paragraph, {
 class IndexPage extends React.Component {
   render() {
     return (
-      <SectionWrapper>
-        <Paragraph>
-          <Header fontSize={"2em"}>PAVITHRA KODMAD</Header>
-          <TextWrapper>
-            I'm Pavithra. I work as a Developer at Atlassian Headquarters in
-            Sydney. I specialize in Front-end Technologies and have good
-            experience at making Production ready applications. I try to{" "}
-            <Link to="/tech-stuff">blog</Link> my learnings sometimes. I have
-            also <Link to="talks">spoken</Link> about tech that I'm fascinated
-            by.
-          </TextWrapper>
-        </Paragraph>
-      </SectionWrapper>
+      <Paragraph>
+        <Header fontSize={"2em"}>PAVITHRA KODMAD</Header>
+        <TextWrapper>
+          I'm Pavithra. I work as a Developer at Atlassian Headquarters in
+          Sydney. I specialize in Front-end Technologies and have good
+          experience at making Production ready applications. I try to{" "}
+          <Link to="/tech-stuff">blog</Link> my learnings sometimes. I have also{" "}
+          <Link to="talks">spoken</Link> about tech that I'm fascinated by.
+        </TextWrapper>
+      </Paragraph>
     );
   }
 }

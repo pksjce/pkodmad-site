@@ -15,26 +15,24 @@ const LinkWrapper = styled(Link)`
 export default ({ data }) => {
   const nodes = data.allMarkdownRemark.edges.map(edge => edge.node);
   return [
-    <SectionWrapper>
-      <Paragraph>
-        <Header fontSize={"3em"}>Tech Articles</Header>
+    <Paragraph>
+      <Header fontSize={"3em"}>Tech Articles</Header>
 
-        <ul>
-          {nodes.reverse().map(node => (
-            <li key={node.id}>
-              <LinkWrapper
-                style={{
-                  textDecoration: `none`
-                }}
-                to={`${node.frontmatter.path}`}
-              >
-                {node.frontmatter.title} ({node.timeToRead} mins)
-              </LinkWrapper>
-            </li>
-          ))}
-        </ul>
-      </Paragraph>
-    </SectionWrapper>
+      <ul>
+        {nodes.reverse().map(node => (
+          <li key={node.id}>
+            <LinkWrapper
+              style={{
+                textDecoration: `none`
+              }}
+              to={`${node.frontmatter.path}`}
+            >
+              {node.frontmatter.title} ({node.timeToRead} mins)
+            </LinkWrapper>
+          </li>
+        ))}
+      </ul>
+    </Paragraph>
   ];
 };
 

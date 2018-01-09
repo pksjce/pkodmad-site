@@ -26,12 +26,18 @@ const ContentWrapper = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-rows: 0.5fr 6fr;
+  grid-template-rows: 0.5fr 6fr 0.1fr;
   position: absolute;
 `;
 const Content = styled.div`
   height: 100%;
   position: relative;
+`;
+
+const Footer = styled.div`
+  color: white;
+  font-size: 0.7em;
+  text-align: right;
 `;
 
 export const query = graphql`
@@ -57,26 +63,48 @@ const TemplateWrapper = ({ children, data, location }) => {
 
       <Wrapper>
         <ImageBox src={Wallpaper} />
-        {isFullPage(location.pathname) ? (
-          children()
-        ) : (
-          <ContentWrapper>
-            <NavHeader>
-              {pages.map(page => (
-                <LinkWrapper
-                  key={page.id}
-                  activeStyle={{
-                    borderBottom: "3px solid white"
-                  }}
-                  to={page.link}
-                >
-                  {page.name}
-                </LinkWrapper>
-              ))}
-            </NavHeader>
-            <Content>{children()}</Content>
-          </ContentWrapper>
-        )}
+        <ContentWrapper>
+          {isFullPage(location.pathname)
+            ? children()
+            : [
+                <NavHeader>
+                  {pages.map(page => (
+                    <LinkWrapper
+                      key={page.id}
+                      activeStyle={{
+                        borderBottom: "3px solid white"
+                      }}
+                      to={page.link}
+                    >
+                      {page.name}
+                    </LinkWrapper>
+                  ))}
+                </NavHeader>,
+                <Content>{children()}</Content>
+              ]}
+          <Footer>
+            <div style={{ textDecoration: "underline" }}>Credits</div>
+            <div>
+              Powered by{" "}
+              <a
+                style={{ color: "#b2d4ff" }}
+                href="https://www.gatsbyjs.org"
+                target="_blank"
+              >
+                GatsbyJs
+              </a>
+            </div>
+            <div>
+              <a
+                style={{ color: "#b2d4ff" }}
+                href="http://tikspor.com/g/2017/01/inspiring-bookshelf-background-for-ipad-images-decoration-ideas.jpg"
+                target="_blank"
+              >
+                Background Image
+              </a>
+            </div>
+          </Footer>
+        </ContentWrapper>
       </Wrapper>
     </div>
   );
