@@ -37,6 +37,7 @@ const Content = styled.div`
 const Footer = styled.div`
   color: white;
   font-size: 0.7em;
+  margin: 0 20px 20px 0;
   text-align: right;
 `;
 
