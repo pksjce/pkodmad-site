@@ -11,7 +11,7 @@
     "gatsby-plugin-catch-links": "^1.0.13",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-react-next": "^1.0.5",
-    "gatsby-plugin-styled-components": "^2.0.3",
+    "gatsby-plugin-styled-components": "^2.0.4",
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.9",
     "gatsby-source-medium": "^1.0.9",

@@ -38,6 +38,7 @@ module.exports = {
         plugins: [] // gatsby-remark-prismjs, gatsby-remark-copy-linked-files, gatsby-remark-images
       }
     },
-    `gatsby-transformer-json`
+    `gatsby-transformer-json`,
+    `gatsby-plugin-styled-components`
   ]
 };
