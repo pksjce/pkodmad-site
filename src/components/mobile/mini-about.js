@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MyImage from "../my-image";
+import Link from 'gatsby-link';
 
 const CenterPiece = styled.div`
   padding: 10px;
@@ -35,7 +36,7 @@ export default () => {
         <NameText>Pavithra Kodmad</NameText>
         <AboutText>❤️ to code</AboutText>
         <AboutText>📚 Book nerd 🤓</AboutText>
-        <AboutText>I ❤️ 🐈 and 🐕</AboutText>
+        <AboutText>I ❤️ <Link to='/cats'>🐈</Link> and 🐕</AboutText>
       </AboutWrapper>
     </CenterPiece>
   );
