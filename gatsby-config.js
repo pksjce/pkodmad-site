@@ -30,6 +30,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/cat_page`,
+        name: "cat_page"
+      }
+    },
+    {
       resolve: `gatsby-plugin-medium-publication`
     },
     {
@@ -39,6 +46,9 @@ module.exports = {
       }
     },
     `gatsby-transformer-json`,
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-offline`
   ]
 };
