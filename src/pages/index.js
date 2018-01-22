@@ -8,6 +8,7 @@ import MyImage from "../components/my-image";
 import { Menu, MiniAbout } from "../components/mobile";
 import { TextWrapper } from "../components/paragraph";
 import Header from "../components/header";
+import SocialButtons from "../components/social-buttons";
 
 const Page = styled.div`
   display: grid;
@@ -24,7 +25,7 @@ const MobilePage = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-rows: 6fr 1fr;
+  grid-template-rows: 5fr 1fr;
   @media (min-width: 420px) {
     display: none;
   }
@@ -94,7 +95,7 @@ export default () => {
           <MyImage />
           <Name>Pavithra Kodmad</Name>
           <TextWrapper>
-            I'm Pavithra. I work as a Developer at Atlassian Headquarters in
+            I'm Pavithra. I work as a Developer at Atlassian in
             Sydney. I specialize in Front-end Technologies and have good
             experience at making Production ready applications. I
             <LinkColor to="/tech-stuff"> blog</LinkColor> my learnings
@@ -103,6 +104,7 @@ export default () => {
             passion. My most neglected hobbies are
             <LinkColor to="/prose"> writing</LinkColor> and drawing. I love <LinkColor to='/cats'> cats </LinkColor>
           </TextWrapper>
+          <SocialButtons />
         </Center>
       </Page>
     </div>

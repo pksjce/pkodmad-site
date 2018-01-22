@@ -60,7 +60,9 @@ const TemplateWrapper = ({ children, data, location }) => {
   const pages = pageList();
   return (
     <div>
-      <Helmet title={title} />
+      <Helmet title={title}>
+        <link rel="shortcut icon" href="pk-favicon.ico" type="image/x-icon" />
+      </Helmet>
 
       <Wrapper>
         <ImageBox src={Wallpaper} />
@@ -68,21 +70,21 @@ const TemplateWrapper = ({ children, data, location }) => {
           {isFullPage(location.pathname)
             ? children()
             : [
-                <NavHeader>
-                  {pages.map(page => (
-                    <LinkWrapper
-                      key={page.id}
-                      activeStyle={{
-                        borderBottom: "3px solid white"
-                      }}
-                      to={page.link}
-                    >
-                      {page.name}
-                    </LinkWrapper>
-                  ))}
-                </NavHeader>,
-                <Content>{children()}</Content>
-              ]}
+              <NavHeader>
+                {pages.map(page => (
+                  <LinkWrapper
+                    key={page.id}
+                    activeStyle={{
+                      borderBottom: "3px solid white"
+                    }}
+                    to={page.link}
+                  >
+                    {page.name}
+                  </LinkWrapper>
+                ))}
+              </NavHeader>,
+              <Content>{children()}</Content>
+            ]}
           <Footer>
             <div style={{ textDecoration: "underline" }}>Credits</div>
             <div>

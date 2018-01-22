@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Pavithra Kodmad`,
+    title: `Pavithra Kodmad - A personal space`,
     author: `Pavithra Kodmad`
   },
   pathPrefix: "/",
