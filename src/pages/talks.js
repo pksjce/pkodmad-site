@@ -4,7 +4,6 @@ import Paragraph, { TextWrapper } from "../components/paragraph";
 import styled from "styled-components";
 
 const Name = styled.div`
-  font-family: "Ranga", cursive;
   font-weight: bold;
   font-size: 1.3em;
   text-decoration: underline;
