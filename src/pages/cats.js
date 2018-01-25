@@ -30,8 +30,13 @@ const Paragraph = styled.div`
 const Image = styled.img`
     margin-bottom: 0;
     cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #0000006b;
+    opacity: 0.85;
+    background-color: black;
     &:hover {
-        box-shadow: 0px 1px 10px white;
+        box-shadow: 0px 1px 4px #0000006b;
+        opacity: 1
     }
 `
 
@@ -73,11 +78,7 @@ class CatPage extends React.Component {
                             const shrpImageId = shrpImg.node.id;
                             return shrpImageId.indexOf(`${id}.jpg`) > 0
                         })[0]
-                        const r = imgObject.node.resolutions.aspectRatio;
-                        if (r < 0.76) {
-                            return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></div>
-                        }
-                        return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></div>
+                        return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} alt={text} /></div>
                     })}
                 </CatContainer>
                 <Modal isOpen={this.state.openModal} onRequestClose={this.closeModal}>

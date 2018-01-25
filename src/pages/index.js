@@ -109,8 +109,8 @@ export default () => {
             <LinkColor to="/prose"> writing</LinkColor> and drawing. I love <LinkColor to='/cats'> cats </LinkColor>
           </TextWrapper>
           <SocialButtons />
-          <Footer />
         </Center>
+        <Footer />
       </Page>
     </div>
   );
