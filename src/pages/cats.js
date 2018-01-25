@@ -1,32 +1,37 @@
 import React from "react";
 import Header from "../components/header";
-import Paragraph from "../components/paragraph";
 import styled from "styled-components";
 import Modal from 'react-modal';
 
 const CatContainer = styled.div`
     display: grid;
-    min-height: 600px;
+    min-height: 250px;
     grid-column-gap: 10px;
-    grid-auto-rows: minmax(1fr, 200px);
-    grid-template-columns: repeat(4, minmax(auto, 1fr));
     align-items: stretch;
     justify-items: center;
-`
+    grid-template-columns: 1fr 1fr;
 
-const ImageSpan1 = styled.div`
-    grid-row: span 1
 `
+const Paragraph = styled.div`
+  margin: auto;
+  background: #0000006b;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
 
-const ImageSpan2 = styled.div`
-    grid-row: span 2;
-`
+  @media (min-width: 420px) {
+    margin: 10px 20%;
+    padding: 20px;
+  }
+`;
+
 
 const Image = styled.img`
     margin-bottom: 0;
     cursor: pointer;
     &:hover {
-        border: 2px solid pink
+        box-shadow: 0px 1px 10px white;
     }
 `
 
@@ -70,9 +75,9 @@ class CatPage extends React.Component {
                         })[0]
                         const r = imgObject.node.resolutions.aspectRatio;
                         if (r < 0.76) {
-                            return <ImageSpan2 onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></ImageSpan2>
+                            return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></div>
                         }
-                        return <ImageSpan1 onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></ImageSpan1>
+                        return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} /></div>
                     })}
                 </CatContainer>
                 <Modal isOpen={this.state.openModal} onRequestClose={this.closeModal}>

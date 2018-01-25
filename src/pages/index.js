@@ -9,13 +9,14 @@ import { Menu, MiniAbout } from "../components/mobile";
 import { TextWrapper } from "../components/paragraph";
 import Header from "../components/header";
 import SocialButtons from "../components/social-buttons";
+import Footer from "../components/footer";
 
 const Page = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
   @media (max-width: 420px) {
     display: none;
   }
@@ -23,13 +24,15 @@ const Page = styled.div`
 
 const MobilePage = styled.div`
   display: grid;
+  position: absolute;
   width: 100%;
   height: 100%;
-  grid-template-rows: 5fr 1fr;
+  z-index: 1;
+  top: 0;
+  grid-template-rows: 6fr 1fr 1fr;
   @media (min-width: 420px) {
     display: none;
   }
-  z-index: 1;
 `;
 
 const Center = styled.div`
@@ -89,6 +92,7 @@ export default () => {
           <MiniAbout />
         </Center>
         <Menu />
+        <Footer />
       </MobilePage>
       <Page>
         <Center>
@@ -105,6 +109,7 @@ export default () => {
             <LinkColor to="/prose"> writing</LinkColor> and drawing. I love <LinkColor to='/cats'> cats </LinkColor>
           </TextWrapper>
           <SocialButtons />
+          <Footer />
         </Center>
       </Page>
     </div>

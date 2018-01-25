@@ -8,21 +8,14 @@ const IconImg = styled.img`
   margin-top: 20px;
 `
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: white;
+  text-align:center;
+  width: 100%;
 `
 const GithubButton = styled.a`
-  grid-column: 2;
-  display:grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
+  margin-right: 20px;
 `
 const TwitterButton = styled.a`
-  grid-column: 3;
-  display:grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
+ 
 `
 
 const IconLabel = styled.span`
@@ -30,11 +23,10 @@ const IconLabel = styled.span`
 export default () => {
   return <Wrapper>
     <GithubButton href='https://github.com/pksjce' target="_blank">
-      <IconImg src={github} /><IconLabel>pksjce</IconLabel>
+      <IconImg src={github} />
     </GithubButton>
     <TwitterButton href='https://twitter.com/pkodmad' target="_blank">
-
-      <IconImg src={twitter} /><IconLabel>pkodmad</IconLabel>
+      <IconImg src={twitter} />
     </TwitterButton>
   </Wrapper>;
 };

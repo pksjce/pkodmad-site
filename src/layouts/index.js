@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
 `;
 
 const ContentWrapper = styled.div`
@@ -28,7 +27,6 @@ const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
   grid-template-rows: 0.5fr 6fr 0.1fr;
-  position: absolute;
 }
 `;
 const Content = styled.div`
@@ -39,8 +37,7 @@ const Content = styled.div`
 const Footer = styled.div`
   color: white;
   font-size: 0.7em;
-  margin: 0 20px 20px 0;
-  text-align: right;
+  position:sticky;
 `;
 
 export const query = graphql`
@@ -68,10 +65,10 @@ const TemplateWrapper = ({ children, data, location }) => {
 
       <Wrapper>
         <ImageBox src={Wallpaper} />
-        <ContentWrapper>
-          {isFullPage(location.pathname)
-            ? children()
-            : [
+        {isFullPage(location.pathname)
+          ? children()
+          : [
+            <ContentWrapper>
               <NavHeader>
                 {pages.map(page => (
                   <LinkWrapper
@@ -86,30 +83,9 @@ const TemplateWrapper = ({ children, data, location }) => {
                 ))}
               </NavHeader>,
               <Content>{children()}</Content>
-            ]}
-          <Footer>
-            <div style={{ textDecoration: "underline" }}>Credits</div>
-            <div>
-              Powered by{" "}
-              <a
-                style={{ color: "#b2d4ff" }}
-                href="https://www.gatsbyjs.org"
-                target="_blank"
-              >
-                GatsbyJs
-              </a>
-            </div>
-            <div>
-              <a
-                style={{ color: "#b2d4ff" }}
-                href="http://tikspor.com/g/2017/01/inspiring-bookshelf-background-for-ipad-images-decoration-ideas.jpg"
-                target="_blank"
-              >
-                Background Image
-              </a>
-            </div>
-          </Footer>
-        </ContentWrapper>
+            </ContentWrapper>
+          ]}
+
       </Wrapper>
     </div>
   );
