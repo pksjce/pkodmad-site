@@ -28,7 +28,7 @@ export default ({ data }) => {
   const talkList = data.allTalksJson.edges;
   return [
     <Paragraph>
-      <Header fontSize="3em">Talks</Header>,
+      <Header fontSize="3em">Talks</Header>
       {talkList.map(talks => {
         const { node } = talks;
         const {
