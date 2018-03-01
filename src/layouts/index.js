@@ -22,12 +22,10 @@ const Wrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-@media (min-width: 420px) {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-rows: 0.5fr 6fr 0.1fr;
-}
+  @media (min-width: 420px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const Content = styled.div`
   height: 100%;
