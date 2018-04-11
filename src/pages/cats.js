@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/header";
 import styled from "styled-components";
 import Modal from "react-responsive-modal";
+import Slider from "react-slick";
 
 const CatContainer = styled.div`
   display: grid;
@@ -50,46 +51,77 @@ class CatPage extends React.Component {
     this.state = {
       openModal: false,
       modalImg: {},
-      text: ""
+      text: "",
+      index: 0
     };
     this.setModal = this.setModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-  setModal(imgObject, text) {
+  setModal(index) {
     this.setState({
       openModal: true,
-      modalImg: imgObject,
-      text
+      index
     });
   }
   closeModal(imgObject) {
     this.setState({
       openModal: false,
-      modalImg: {},
-      text: ""
+      index: 0
     });
   }
   render() {
     const { data } = this.props;
     const imgData = data.allPostsJson.edges;
     const sharpImages = data.allImageSharp.edges;
+    const settings = {
+      dots: true,
+      fade: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return [
       <Paragraph>
         <Header fontSize="3em">Cats I've met</Header>
         <CatContainer>
-          {imgData.map(({ node: { id, text } }) => {
+          {imgData.map(({ node: { id, text } }, index) => {
             const imgObject = sharpImages.filter(shrpImg => {
               const shrpImageId = shrpImg.node.id;
               return shrpImageId.indexOf(`${id}.jpg`) > 0;
             })[0];
             return (
-              <div onClick={() => this.setModal(imgObject, text)}>
+              <div onClick={() => this.setModal(index)}>
                 <Image src={imgObject.node.resolutions.src} alt={text} />
               </div>
             );
           })}
         </CatContainer>
-        <Modal
+        {this.state.openModal && (
+          <Slider {...settings} slideIndex={this.state.index}>
+            {imgData.map(({ node: { id, text } }) => {
+              const imgObject = sharpImages.filter(shrpImg => {
+                const shrpImageId = shrpImg.node.id;
+                return shrpImageId.indexOf(`${id}.jpg`) > 0;
+              })[0];
+              console.log(imgObject);
+              return (
+                <div>
+                  <CenterWrapper>
+                    <img
+                      style={{
+                        maxHeight: "650px"
+                      }}
+                      src={imgObject.node.original.src}
+                    />
+                  </CenterWrapper>
+                  <CenterWrapper>{text}</CenterWrapper>
+                </div>
+              );
+            })}
+          </Slider>
+        )}
+
+        {/* <Modal
           open={this.state.openModal}
           onClose={this.closeModal}
           showCloseIcon={false}
@@ -106,7 +138,7 @@ class CatPage extends React.Component {
             </CenterWrapper>
           )}
           <CenterWrapper>{this.state.text}</CenterWrapper>
-        </Modal>
+        </Modal> */}
       </Paragraph>
     ];
   }
