@@ -1,17 +1,16 @@
 import React from "react";
 import Header from "../components/header";
 import styled from "styled-components";
-import Modal from 'react-modal';
+import Modal from "react-responsive-modal";
 
 const CatContainer = styled.div`
-    display: grid;
-    min-height: 250px;
-    grid-column-gap: 10px;
-    align-items: stretch;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-
-`
+  display: grid;
+  min-height: 250px;
+  grid-column-gap: 10px;
+  align-items: stretch;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+`;
 const Paragraph = styled.div`
   margin: auto;
   background: #0000006b;
@@ -26,99 +25,121 @@ const Paragraph = styled.div`
   }
 `;
 
-
 const Image = styled.img`
-    margin-bottom: 0;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 1px solid #0000006b;
-    opacity: 0.85;
-    background-color: black;
-    &:hover {
-        box-shadow: 0px 1px 4px #0000006b;
-        opacity: 1
-    }
-`
+  margin-bottom: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #0000006b;
+  opacity: 0.85;
+  background-color: black;
+  &:hover {
+    box-shadow: 0px 1px 4px #0000006b;
+    opacity: 1;
+  }
+`;
+
+const CenterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 class CatPage extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            openModal: false,
-            modalImg: {},
-            text: ""
-        }
-        this.setModal = this.setModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-    }
-    setModal(imgObject, text) {
-        this.setState({
-            openModal: true,
-            modalImg: imgObject,
-            text
-        })
-    }
-    closeModal(imgObject) {
-        this.setState({
-            openModal: false,
-            modalImg: {},
-            text: ""
-        })
-    }
-    render() {
-        const { data } = this.props;
-        const imgData = data.allPostsJson.edges;
-        const sharpImages = data.allImageSharp.edges;
-        return [
-            <Paragraph>
-                <Header fontSize="3em">Cats I've met</Header>
-                <CatContainer>
-                    {imgData.map(({ node: { id, text } }) => {
-                        const imgObject = sharpImages.filter((shrpImg) => {
-                            const shrpImageId = shrpImg.node.id;
-                            return shrpImageId.indexOf(`${id}.jpg`) > 0
-                        })[0]
-                        return <div onClick={() => this.setModal(imgObject, text)}><Image src={imgObject.node.resolutions.src} alt={text} /></div>
-                    })}
-                </CatContainer>
-                <Modal isOpen={this.state.openModal} onRequestClose={this.closeModal}>
-
-                    {this.state.modalImg.node && <img style={{ maxHeight: "650px" }} src={this.state.modalImg.node.original.src} />}
-                    <div>{this.state.text}</div>
-                </Modal>
-            </Paragraph>
-        ];
-    }
+  constructor() {
+    super();
+    this.state = {
+      openModal: false,
+      modalImg: {},
+      text: ""
+    };
+    this.setModal = this.setModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  setModal(imgObject, text) {
+    this.setState({
+      openModal: true,
+      modalImg: imgObject,
+      text
+    });
+  }
+  closeModal(imgObject) {
+    this.setState({
+      openModal: false,
+      modalImg: {},
+      text: ""
+    });
+  }
+  render() {
+    const { data } = this.props;
+    const imgData = data.allPostsJson.edges;
+    const sharpImages = data.allImageSharp.edges;
+    return [
+      <Paragraph>
+        <Header fontSize="3em">Cats I've met</Header>
+        <CatContainer>
+          {imgData.map(({ node: { id, text } }) => {
+            const imgObject = sharpImages.filter(shrpImg => {
+              const shrpImageId = shrpImg.node.id;
+              return shrpImageId.indexOf(`${id}.jpg`) > 0;
+            })[0];
+            return (
+              <div onClick={() => this.setModal(imgObject, text)}>
+                <Image src={imgObject.node.resolutions.src} alt={text} />
+              </div>
+            );
+          })}
+        </CatContainer>
+        <Modal
+          open={this.state.openModal}
+          onClose={this.closeModal}
+          showCloseIcon={false}
+          little
+        >
+          {this.state.modalImg.node && (
+            <CenterWrapper>
+              <img
+                style={{
+                  maxHeight: "650px"
+                }}
+                src={this.state.modalImg.node.original.src}
+              />
+            </CenterWrapper>
+          )}
+          <CenterWrapper>{this.state.text}</CenterWrapper>
+        </Modal>
+      </Paragraph>
+    ];
+  }
 }
 
-export default CatPage
+export default CatPage;
 
 export const pageQuery = graphql`
-    query allImages {
-        allPostsJson {
-            edges {
-              node {
-                id
-              text
-              }
-            }
-          }
-          allImageSharp {
-            edges {
-              node {
-                id
-              original {
-                width
-                height
-                src
-              }
-              resolutions {
-                  aspectRatio
-                  src
-                  srcWebp
-              }
-              }
-            }
-          }
+  query allImages {
+    allPostsJson {
+      edges {
+        node {
+          id
+          text
+        }
+      }
     }
-`
+    allImageSharp {
+      edges {
+        node {
+          id
+          original {
+            width
+            height
+            src
+          }
+          resolutions {
+            aspectRatio
+            src
+            srcWebp
+          }
+        }
+      }
+    }
+  }
+`;

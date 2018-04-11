@@ -25,7 +25,7 @@
     "react": "^16.2.0",
     "react-call-return": "^0.5.0",
     "react-dom": "^16.2.0",
-    "react-modal": "^3.1.11",
+    "react-responsive-modal": "^2.0.1",
     "rss-to-json": "^1.0.3",
     "styled-components": "^2.2.4",
     "typography-theme-lawton": "^0.15.10",
