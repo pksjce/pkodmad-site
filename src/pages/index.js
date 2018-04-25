@@ -68,13 +68,15 @@ const Sidebox2 = styled.div`
   }
 `;
 
-const LinkColor = styled(Link) `
+const LinkColor = styled(Link)`
   color: #b2d4ff;
 `;
 
-const Name = styled(Header) `
+const Name = styled.div`
   font-family: "Special Elite", cursive;
   font-size: 3em;
+  text-align: center;
+  margin: 20px 0;
 `;
 
 const Box = styled.div`
@@ -99,14 +101,15 @@ export default () => {
           <MyImage />
           <Name>Pavithra Kodmad</Name>
           <TextWrapper>
-            I'm Pavithra. I work as a Developer at Atlassian in
-            Sydney. I specialize in Front-end Technologies and have good
-            experience at making Production ready applications. I
+            I'm Pavithra. I work as a Developer at Atlassian in Sydney. I
+            specialize in Front-end Technologies and have good experience at
+            making Production ready applications. I
             <LinkColor to="/tech-stuff"> blog</LinkColor> my learnings
             sometimes. I have also <LinkColor to="/talks">spoken </LinkColor>
             about tech that I'm fascinated by. Reading is my most notorious
             passion. My most neglected hobbies are
-            <LinkColor to="/prose"> writing</LinkColor> and drawing. I love <LinkColor to='/cats'> cats </LinkColor>
+            <LinkColor to="/prose"> writing</LinkColor> and drawing. I love{" "}
+            <LinkColor to="/cats"> cats </LinkColor>
           </TextWrapper>
           <SocialButtons />
         </Center>
