@@ -21,7 +21,8 @@ const PostParagraph = styled.div`
   line-height: 20px;
   @media (min-width: 600px) {
     margin: 10px 20%;
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 24px;
   }
   p {
     font-size: 20px;
