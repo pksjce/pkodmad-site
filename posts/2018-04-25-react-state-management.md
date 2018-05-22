@@ -86,3 +86,53 @@ All this can seem really unnecessary when you really dont need that degree of fl
 | Updater            |     | A component dispatches an action which is captured in a reducer to update the state, which triggers a re render of the component which is concerned with the data change.                                                                           |
 | Async support      |     | Provides first class support using middleware with options like thunk/redux-observable/redux-saga                                                                                                                                                   |
 | Middleware support |     | Again first class support. Thus making for beautiful and interactive dev tools with support for debugging and time travel.                                                                                                                          |
+
+### So many new libraries.
+
+In the very recent times, state management has again become a topic of much discussion and a bunch of new libraries have erupted promising to make away with all the boilerplate, yet provide a smooth state management solution.
+
+The reason, I think for this rise can be attributed to
+
+1.  The new React context api - After the complete rewrite of the react internals, the react team revisited the much debated context api. This api is the way react recommends we update state by "jumping" the react render tree and exchange data between the only components conceerned with the state. The earlier version of the api was not a stable one and not recommended by the core team. However, the api was drastically changed with the community's help using this [RFC](https://github.com/reactjs/rfcs/blob/master/text/0002-new-version-of-context.md).
+2.  The rise of render-props - At one point in time, the only way to decorate functionality over a react component by libraries was through Higher-Order-components(HOC). This method was proven to be not so flexible and after much debate replaced in many places using the render-props pattern. [This talk](https://www.youtube.com/watch?v=BcVAq3YFiuc) is a great resource to learn all about it.Redux and many of the previous solutions advocated the HOC way of doing things.
+
+The above both practices started a new round of experiments in State management libraries. I will illustrate two of them here.
+
+1.  [Unstated](https://github.com/jamiebuilds/unstated)
+    Unstated is perhaps the simplest utility wrapper over React's context api. It is tiny, gives a great api and does this as close to the "metal" that is React. It makes a single important design choice of using `setState` api to update state in it's "store"
+    Unstated works by providing three primitives to manage state globally in your React application.
+    `Provider` - This is the component that needs to wrap around the top of your application and gives state as context to all the components within it.
+    `Container` - This is the "store" abstraction that it provides. It is a class you extend, to store your state and house the methods that update this state. All state can be updated only using `this.setState`. This behaves exactly as it would in a React component but at a global level.
+    `Consumer` - The consumer receives the state from the container in the form of render properties. It also receives the methods specified in the container.
+
+This is a non-trivial example I created to see the full usage of Unstated.
+https://codesandbox.io/s/ko5659z9j5
+
+|                    |     |                                                                                                              |
+| ------------------ | --- | ------------------------------------------------------------------------------------------------------------ |
+| State Container    |     | Provides a container api to store state globally                                                             |
+| Selector           |     | DIY. Can access state directly. Selectors wont stop component from rerendering when unrelated state changes. |
+| Updater            |     | Simple method calls which use `setState` to update state container data.                                     |
+| Async support      |     | Completely DIY.                                                                                              |
+| Middleware support |     | None. However, there is a hook provided for dev tools.                                                       |
+
+2.  [React-copy-write](https://github.com/aweary/react-copy-write)
+
+In the same sprit of using render properties and the new React context, there exists another library, which makes a different design decision for state update. It uses the immutable library `immer` which gives it a nice guarantee of always updating state immutably. Another advantage to this library is that it provides a selector pattern which prevents unnecessary re-renders in React compoenents.
+In the library, you can create a State object using `createState` api by providing it the shape of your state. The State object then destructures into a `Provider`, `Consumer` and a `createMutator` method.
+To see a full usage of this library, refer to this sandbox.
+https://codesandbox.io/s/732or29n0j
+
+|                    |     |                                                                      |
+| ------------------ | --- | -------------------------------------------------------------------- |
+| State Container    |     | Provides a container api to store state globally.                    |
+| Selector           |     | A definitive api to extract selectors.                               |
+| Updater            |     | State is updated immutably with the power of `immer` using mutators. |
+| Async support      |     | Completely DIY.                                                      |
+| Middleware support |     | None.                                                                |
+
+### What am I skipping?
+
+My main aim with this article is to illustrate at a high level, what everybody talks about when they discuss state management and why there are this many solutions to do it. It is a subjective matter of taste and opinion when it comes to choosing a state management library.
+I also dont talk much about some other very popular solutions like mobx and cerebral. This is mostly because I have not worked with them as closely as those I have described in this article.
+One other thing that I'm not speaking about here is the existence of graphql. WIth the new popularity of graphql and its query api, there is a push to do local and remote state management using relay or apollo. They are increasing support for state management solutions day by day. This is definitely a space to watch out for and there are many consumers who love this solution for their apps.
