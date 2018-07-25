@@ -2,18 +2,18 @@
 path: "/blog/render-props-vs-hoc"
 date: "2018-07-24"
 title: "Why is React with render props better than good ole' HOCs?"
-draft: true
+draft: false
 tags: 
 - "react"
 ---
 
 `render props` is a pattern to compose and reuse components in React. It has been brewing around for a couple of years and is now accepted as a legit pattern due to
 
-1. adoption in many widely used react libraries such as react-router
+1. adoption in many widely used react libraries such as [react-router](https://github.com/ReactTraining/react-router)
 
-2. adoption within React api like the new Context API
+2. adoption within React api like the [new Context API](https://github.com/reactjs/rfcs/pull/2)
 
-3. proven strategies for testing.
+3. proven strategies for [testing](https://blog.kentcdodds.com/testing-%EF%B8%8F-components-using-render-props-5623ab1814c).
 
 For me, I’ve been hearing about this pattern everywhere!
 
