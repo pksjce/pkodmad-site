@@ -7,9 +7,9 @@ import Title from "../components/home-titles";
 import MyImage from "../components/my-image";
 import { Menu, MiniAbout } from "../components/mobile";
 import { TextWrapper } from "../components/paragraph";
-import Header from "../components/header";
 import SocialButtons from "../components/social-buttons";
 import Footer from "../components/footer";
+import { mainColor } from "../utils/const";
 
 const Page = styled.div`
   display: grid;
@@ -43,8 +43,7 @@ const Center = styled.div`
     grid-area: 2 / 2 / 4 / 4;
     position: relative;
     opacity: 1;
-    background: #0000006b;
-    color: white;
+    border: 2px solid ${mainColor};
   }
 `;
 
@@ -69,7 +68,7 @@ const Sidebox2 = styled.div`
 `;
 
 const LinkColor = styled(Link)`
-  color: #b2d4ff;
+  color: ${mainColor};
 `;
 
 const Name = styled.div`

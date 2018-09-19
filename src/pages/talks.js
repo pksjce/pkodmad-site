@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/header";
 import Paragraph, { TextWrapper } from "../components/paragraph";
 import styled from "styled-components";
+import Navigation from "../navigation";
+import { mainColor } from "../utils/const";
 
 const Name = styled.div`
   font-weight: bold;
@@ -19,16 +21,23 @@ const Reference = styled.div`
 `;
 const Youtube = styled.div`
   margin: 5px 0;
+  a {
+    color: ${mainColor};
+  }
 `;
 const Slides = styled.div`
   margin: 5px 0;
+  a {
+    color: ${mainColor};
+  }
 `;
 
 export default ({ data }) => {
   const talkList = data.allTalksJson.edges;
   return [
     <Paragraph>
-      <Header fontSize="3em">Talks</Header>
+      <Navigation selected="talks" />
+      <Header>Talks</Header>
       {talkList.map(talks => {
         const { node } = talks;
         const {

@@ -7,12 +7,14 @@ import Paragraph, {
   SectionWrapper,
   TextWrapper
 } from "../components/paragraph";
+import Navigation from "../navigation";
 
 class IndexPage extends React.Component {
   render() {
     return (
       <Paragraph>
-        <Header fontSize={"2em"}>PAVITHRA KODMAD</Header>
+        <Navigation selected="about" />
+        <Header>PAVITHRA KODMAD</Header>
         <TextWrapper>
           I'm Pavithra. I work as a Developer at Atlassian Headquarters in
           Sydney. I specialize in Front-end Technologies and have good
