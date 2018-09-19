@@ -6,7 +6,6 @@ module.exports = {
   pathPrefix: "/",
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-next`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-typography`,
