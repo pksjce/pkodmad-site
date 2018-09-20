@@ -6,12 +6,16 @@ import Paragraph, {
 } from "../components/paragraph";
 import Link from "gatsby-link";
 import styled from "styled-components";
+import Navigation from "../navigation";
+import { mainColor } from "../utils/const";
 
 const LinkWrapper = styled(Link)`
-  color: red;
-
-  &:visited {
-    color: brown;
+  color: black;
+  &:hover {
+    color: ${mainColor};
+  }
+  &:visited: {
+    color: black;
   }
 `;
 class TagsPageRoute extends React.Component {
@@ -20,7 +24,8 @@ class TagsPageRoute extends React.Component {
 
     return (
       <Paragraph>
-        <Header fontSize={"3em"}>Writings</Header>
+        <Navigation selected="writing" />
+        <Header>Writings</Header>
         <ul>
           {allPosts.map(({ node }) => (
             <li key={node.id}>

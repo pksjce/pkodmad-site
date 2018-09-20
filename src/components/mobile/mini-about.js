@@ -1,20 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import MyImage from "../my-image";
-import Link from 'gatsby-link';
-import SocialButtons from '../social-buttons';
+import Link from "gatsby-link";
+import SocialButtons from "../social-buttons";
+import { mainColor } from "../../utils/const";
 
 const CenterPiece = styled.div`
   padding: 10px;
 `;
 
 const AboutWrapper = styled.div`
-  background: #00000087;
-  box-shadow: 0 1px 2px grey;
+  border: 2px solid ${mainColor};
   width: fit-content;
   margin: 10px auto;
   padding: 10px;
-  color: white;
   border-radius: 10px;
 `;
 
@@ -30,7 +29,7 @@ const AboutText = styled.div`
   text-align: center;
 `;
 
-const Label = styled.span``
+const Label = styled.span``;
 
 export default () => {
   return (
@@ -41,7 +40,9 @@ export default () => {
         <NameText>Pavithra Kodmad</NameText>
         <AboutText>❤️ to code</AboutText>
         <AboutText>📚 Book nerd 🤓</AboutText>
-        <AboutText>I ❤️ <Link to='/cats'>🐈</Link> and 🐕</AboutText>
+        <AboutText>
+          I ❤️ <Link to="/cats">🐈</Link> and 🐕
+        </AboutText>
         <SocialButtons />
       </AboutWrapper>
     </CenterPiece>

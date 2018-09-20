@@ -10,7 +10,7 @@ class TagsPageRoute extends React.Component {
 
     return (
       <Paragraph>
-        <Header fontSize={"3em"}>Tags</Header>
+        <Header>Tags</Header>
         <ul>
           {allTags.map(tag => (
             <li key={tag.fieldValue}>

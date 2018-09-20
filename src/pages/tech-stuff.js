@@ -4,6 +4,8 @@ import Paragraph, { SectionWrapper } from "../components/paragraph";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import { format } from "date-fns";
+import Navigation from "../navigation";
+import { mainColor } from "../utils/const";
 
 const ListContainer = styled.div`
   display: grid;
@@ -25,6 +27,7 @@ const Title = styled(Link)`
 
   &:hover {
     text-decoration: underline;
+    text-decoration-color: ${mainColor};
   }
 `;
 
@@ -35,7 +38,8 @@ export default ({ data }) => {
   );
   return [
     <Paragraph>
-      <Header fontSize={"3em"}>Tech Articles</Header>
+      <Navigation selected="tech-stuff" />
+      <Header>Tech Articles</Header>
 
       {sortedNodes.map(node => (
         <ListContainer>

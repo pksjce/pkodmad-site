@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import { mainColor } from "../../utils/const";
 
 const MenuGrid = styled.div`
   width: 100%;
@@ -14,14 +15,11 @@ const MenuGrid = styled.div`
 `;
 
 const MenuItem = styled(Link)`
-  background-image: linear-gradient(firebrick, brown);
-  border-radius: 20px;
-  box-shadow: 0 1px 2px #ac1d1c;
   text-align: center;
   text-decoration: none;
   padding: 5px;
-  color: white;
-  text-shadow: 0 1px 2px #ac1d1c;
+  border: 1px solid black;
+  color: ${mainColor};
 `;
 
 export default () => {
