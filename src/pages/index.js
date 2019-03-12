@@ -102,13 +102,13 @@ export default () => {
           <TextWrapper>
             I'm Pavithra. I work as a Developer at Atlassian in Sydney. I
             specialize in Front-end Technologies and have good experience at
-            making Production ready applications. I
-            <LinkColor to="/tech-stuff"> blog</LinkColor> my learnings
-            sometimes. I have also <LinkColor to="/talks">spoken </LinkColor>
-            about tech that I'm fascinated by. Reading is my most notorious
-            passion. My most neglected hobbies are
-            <LinkColor to="/prose"> writing</LinkColor> and drawing. I love{" "}
-            <LinkColor to="/cats"> cats </LinkColor>
+            making Production ready applications. I{" "}
+            <LinkColor to="/tech-stuff">blog</LinkColor>{" "}my learnings{" "}
+            sometimes. I have also{" "}<LinkColor to="/talks">spoken</LinkColor>{" "}
+             about tech that I'm fascinated by. Reading is my most notorious
+            passion. My most neglected hobbies are{" "}
+            <LinkColor to="/prose">writing</LinkColor>{" "}and drawing. I love{" "}
+            <LinkColor to="/cats">cats</LinkColor>
           </TextWrapper>
           <SocialButtons />
         </Center>
