@@ -32,23 +32,22 @@ const Title = styled(Link)`
 `;
 
 export default ({ data }) => {
-  const nodes = data.allMarkdownRemark.edges.map(edge => edge.node);
-  const sortedNodes = nodes.sort(
-    (a, b) => format(a.frontmatter.date, "x") < format(b.frontmatter.date, "x")
-  );
+  const nodes = data.allMarkdownRemark.edges.map(edge => ({node: edge.node, date: format(edge.node.frontmatter.date, 'x')}));
+  const sorteddates = nodes.sort((a,b) => a.date -b.date).reverse()
+
   return [
     <Paragraph>
       <Navigation selected="tech-stuff" />
       <Header>Tech Articles</Header>
-
-      {sortedNodes.map(node => (
+      {sorteddates.map(({node}) => {
+        return (
         <ListContainer>
           <Date>{format(node.frontmatter.date, "DD MMMM YYYY")}</Date>
           <Title to={`${node.frontmatter.path}`}>
             {node.frontmatter.title}
           </Title>
         </ListContainer>
-      ))}
+      )})}
     </Paragraph>
   ];
 };

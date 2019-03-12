@@ -51,7 +51,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       });
     });
     result.data.allMediumPub.edges.forEach(({ node }) => {
-      console.log(node.path);
+      
       createPage({
         path: node.path,
         component: mediumPostTemplate
