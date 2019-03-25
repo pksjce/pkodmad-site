@@ -7,7 +7,9 @@ tags:
     - "react"
 ---
 
-This post assumes you know how to code using React. The concept of writing components which are a function of your state, comes with an important problem of reconciling and solving the problem of state management.
+Disclaimer - This post assumes you know how to code using React.
+
+Using React brings forth the concept of writing components which are a function of your state. Thus for the first time since MVC, we as React devs are thinking of the state of our application as one entity. This brings with it a discussion of state management.
 
 'State' is any data that you must maintain in your frontend application. Data can arrive in your application in the form of
 
@@ -15,9 +17,9 @@ This post assumes you know how to code using React. The concept of writing compo
 2.  Data fetched from a backend api resource or an external source like localStorage or sessionStorage
 3.  Data used to maintain the UI itself. Is a modal open? Is the request successful/loading or failed. Is the mouse button clicked? Has window been resized?
 
-This data can change with user interaction or with api interactions. Changed data must be displayed to the user reliably and accurately.
+This data can change with user interaction or with more api interactions. Changed data must be displayed to the user reliably and accurately.
 
-When it comes to abstracting these functionalities into convenient constructs, we are spoiled for choice. We have a ton of libraries which perform these actions for us in various different ways. At first glance, it might appear to be chaos but each of the libraries exists to solve a specific problem that users may encounter while working on React applications.
+When it comes to abstracting these functionalities into convenient constructs, we have a ton of libraries do this for us in various different ways. At first glance, it might appear to be chaos but each of the libraries exists to solve a specific problem that users may encounter while working on React applications, following a specific pattern in React land.
 
 ### What does a state management solution give you?
 
