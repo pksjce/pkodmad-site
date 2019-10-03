@@ -1,10 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
-import styled from "styled-components";
-import MyImage from "../components/my-image";
 import Header from "../components/header";
 import Paragraph, {
-  SectionWrapper,
   TextWrapper
 } from "../components/paragraph";
 import Navigation from "../navigation";

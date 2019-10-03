@@ -29,7 +29,6 @@ const AboutText = styled.div`
   text-align: center;
 `;
 
-const Label = styled.span``;
 
 export default () => {
   return (
@@ -38,7 +37,7 @@ export default () => {
         <MyImage />
 
         <NameText>Pavithra Kodmad</NameText>
-        <AboutText>❤️ to code</AboutText>
+        <AboutText><span role='img'>❤️</span> to code</AboutText>
         <AboutText>📚 Book nerd 🤓</AboutText>
         <AboutText>
           I ❤️ <Link to="/cats">🐈</Link> and 🐕

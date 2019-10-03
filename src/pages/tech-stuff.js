@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Paragraph, { SectionWrapper } from "../components/paragraph";
 import Link from "gatsby-link";
 import styled from "styled-components";
-import { format } from "date-fns";
+import { format,parseISO } from "date-fns";
 import Navigation from "../navigation";
 import { mainColor } from "../utils/const";
 
@@ -32,7 +32,7 @@ const Title = styled(Link)`
 `;
 
 export default ({ data }) => {
-  const nodes = data.allMarkdownRemark.edges.map(edge => ({node: edge.node, date: format(edge.node.frontmatter.date, 'x')}));
+  const nodes = data.allMarkdownRemark.edges.map(edge => ({node: edge.node, date: edge.node.frontmatter.date}));
   const sorteddates = nodes.sort((a,b) => a.date -b.date).reverse()
 
   return [
@@ -42,7 +42,7 @@ export default ({ data }) => {
       {sorteddates.map(({node}) => {
         return (
         <ListContainer>
-          <Date>{format(node.frontmatter.date, "DD MMMM YYYY")}</Date>
+          <Date>{node.frontmatter.date}</Date>
           <Title to={`${node.frontmatter.path}`}>
             {node.frontmatter.title}
           </Title>

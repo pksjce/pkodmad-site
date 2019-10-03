@@ -84,7 +84,7 @@ class CatPage extends React.Component {
             })[0];
             return (
               <div onClick={() => this.setModal(imgObject, text)}>
-                <Image src={imgObject.node.resolutions.src} alt={text} />
+                <div>Add image</div>
               </div>
             );
           })}
