@@ -37,10 +37,10 @@ export default () => {
         <MyImage />
 
         <NameText>Pavithra Kodmad</NameText>
-        <AboutText><span role='img'>❤️</span> to code</AboutText>
-        <AboutText>📚 Book nerd 🤓</AboutText>
+        <AboutText><span role='img' aria-label='heart emoji'>❤️</span> to code</AboutText>
+        <AboutText><span role='img' aria-label='books emoji'>📚</span>Book nerd <span role='img' aria-label='spectacked emoji'>🤓</span></AboutText>
         <AboutText>
-          I ❤️ <Link to="/cats">🐈</Link> and 🐕
+          I <span role='img' aria-label='heart emoji'>❤️</span> <Link to="/cats"><span role='img' aria-label='cat emoji'>🐈</span></Link> and <span role='img' aria-label='dog emoji'>🐕</span>
         </AboutText>
         <SocialButtons />
       </AboutWrapper>

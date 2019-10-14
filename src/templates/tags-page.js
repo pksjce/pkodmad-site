@@ -1,11 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import Header from "../components/header";
-import Paragraph, { SectionWrapper } from "../components/paragraph";
-
-const TagHeader = styled.h1`
-  margin-bottom: 10px;
-`;
+import Paragraph from "../components/paragraph";
 
 export default ({ data, pathContext }) => {
   return (

@@ -14,7 +14,6 @@ export default () => {
       <a
         style={{ color: mainColor }}
         href="https://www.gatsbyjs.org"
-        target="_blank"
       >
         GatsbyJs
       </a>
